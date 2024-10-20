@@ -1,0 +1,334 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/transparent"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="890dp"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/outerContainer5"
+                android:layout_width="298dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/photosbg"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView3"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="68dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/padswbg"
+                app:shapeAppearanceOverlay="@style/roundimageview"
+                app:strokeColor="@color/mama_mo_blue_darker"
+                app:strokeWidth=".70dp" />
+
+            <TextView
+                android:id="@+id/textDayCare8"
+                android:layout_width="148dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="145dp"
+                android:layout_marginTop="70dp"
+                android:text="DEHIGH Dogs and Puppy Pads"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/textDayCare10"
+                android:layout_width="155dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="145dp"
+                android:layout_marginTop="110dp"
+                android:text="X Small Diaper - PHP 10.00"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:id="@+id/outerContainer6"
+                android:layout_width="298dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="180dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/photosbg"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView4"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="188dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/padswbg"
+                app:shapeAppearanceOverlay="@style/roundimageview"
+                app:strokeColor="@color/mama_mo_blue_darker"
+                app:strokeWidth=".70dp" />
+
+            <TextView
+                android:id="@+id/textDayCare12"
+                android:layout_width="152dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="145dp"
+                android:layout_marginTop="190dp"
+                android:text="DEHIGH Dogs and Puppy Pads"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDayCare14"
+                android:layout_width="180dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="145dp"
+                android:layout_marginTop="230dp"
+                android:text="Small Diaper - PHP 15.00 "
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:id="@+id/outerContainer7"
+                android:layout_width="298dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/photosbg"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView5"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="308dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/padswbg"
+                app:shapeAppearanceOverlay="@style/roundimageview"
+                app:strokeColor="@color/mama_mo_blue_darker"
+                app:strokeWidth=".70dp" />
+
+            <TextView
+                android:id="@+id/textDayCare15"
+                android:layout_width="150dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="145dp"
+                android:layout_marginTop="310dp"
+                android:text="DEHIGH Dogs and Puppy Pads"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDayCare16"
+                android:layout_width="180dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="145dp"
+                android:layout_marginTop="350dp"
+                android:text="Medium Diaper - PHP 25.00 "
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="11sp" />
+
+
+            <LinearLayout
+                android:id="@+id/outerContainer8"
+                android:layout_width="298dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="420dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/photosbg"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView6"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="428dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/padswbg"
+                app:shapeAppearanceOverlay="@style/roundimageview"
+                app:strokeColor="@color/mama_mo_blue_darker"
+                app:strokeWidth=".70dp" />
+
+            <TextView
+                android:id="@+id/textDayCare18"
+                android:layout_width="153dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="145dp"
+                android:layout_marginTop="430dp"
+                android:text="DEHIGH Dogs and Puppy Pads"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDayCare19"
+                android:layout_width="180dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="145dp"
+                android:layout_marginTop="470dp"
+                android:text="Large Diaper - PHP 30.00 "
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:id="@+id/outerContainer9"
+                android:layout_width="298dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="540dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/photosbg"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView7"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="548dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/padswbg"
+                app:shapeAppearanceOverlay="@style/roundimageview"
+                app:strokeColor="@color/mama_mo_blue_darker"
+                app:strokeWidth=".70dp" />
+
+            <TextView
+                android:id="@+id/textDayCare21"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="145dp"
+                android:layout_marginTop="550dp"
+                android:text="DEHIGH Dogs and Puppy Pads"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDayCare22"
+                android:layout_width="180dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="145dp"
+                android:layout_marginTop="590dp"
+                android:text="X Large Diaper - PHP 35.00"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:id="@+id/outerContainer24"
+                android:layout_width="330dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="650dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:background="@color/transparent"/>
+        </RelativeLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/btn_settings"
+        android:layout_width="40dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="310dp"
+        android:layout_marginTop="-6dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="settings"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dots" />
+
+    <TextView
+        android:layout_width="299dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:background="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Pet Pads"
+        android:textAlignment="center"
+        android:textColor="@color/mama_mo_blue_darker"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-20dp"
+        android:layout_marginEnd="-20dp"
+        android:layout_marginBottom="-12dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Home"
+            android:scaleType="fitStart"
+            android:src="@drawable/homeicon" />
+
+        <ImageButton
+            android:id="@+id/btn_feedback"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Services"
+            android:scaleType="fitStart"
+            android:src="@drawable/pawicon" />
+
+        <ImageButton
+            android:id="@+id/btn_appointment"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Appointments"
+            android:scaleType="fitStart"
+            android:src="@drawable/plusicon" />
+
+        <ImageButton
+            android:id="@+id/btn_notifications"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Notifications"
+            android:scaleType="fitStart"
+            android:src="@drawable/notificationicon" />
+
+        <ImageButton
+            android:id="@+id/btn_profile"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="-4dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Profile"
+            android:scaleType="fitStart"
+            android:src="@drawable/profileicon" />
+    </LinearLayout>
+</RelativeLayout>

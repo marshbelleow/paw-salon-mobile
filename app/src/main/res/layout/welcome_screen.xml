@@ -1,0 +1,182 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/pawsalonlogowithpaw" />
+
+    <ImageButton
+        android:id="@+id/btn_settings"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="310dp"
+        android:backgroundTint="@color/transparent"
+        android:contentDescription="settings"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dots" />
+
+    <LinearLayout
+        android:id="@+id/top_buttons"
+        android:layout_width="395dp"
+        android:layout_marginTop="80dp"
+        android:layout_height="131dp"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonGrooming"
+                android:layout_width="140dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/backgroundbutton"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Grooming"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnPetBoarding"
+                android:layout_width="140dp"
+                android:layout_height="45dp"
+                android:background="@drawable/backgroundbutton"
+                android:text="Pet Boarding"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="10dp"
+
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPetSupplies"
+                android:layout_width="140dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="-20dp"
+                android:background="@drawable/backgroundbutton"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Pet Supplies"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnVetService"
+                android:layout_width="140dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="50dp"
+                android:background="@drawable/backgroundbutton"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Basic Vet Services"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/galleryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_buttons"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Happy Pets Gallery"
+        android:textColor="@color/mama_mo_blue_darker"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-20dp"
+        android:layout_marginEnd="-20dp"
+        android:layout_marginBottom="-12dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Home"
+            android:scaleType="fitStart"
+            android:src="@drawable/homeicon" />
+
+        <ImageButton
+            android:id="@+id/btn_feedback"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Feedback"
+            android:scaleType="fitStart"
+            android:src="@drawable/pawicon" />
+
+        <ImageButton
+            android:id="@+id/btn_appointment"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Appointments"
+            android:scaleType="fitStart"
+            android:src="@drawable/plusicon" />
+
+        <ImageButton
+            android:id="@+id/btn_notifications"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Notifications"
+            android:scaleType="fitStart"
+            android:src="@drawable/notificationicon" />
+
+        <ImageButton
+            android:id="@+id/btn_profile"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="-4dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Profile"
+            android:scaleType="fitStart"
+            android:src="@drawable/profileicon" />
+    </LinearLayout>
+</RelativeLayout>
+
+
+
+
+
+
+
+

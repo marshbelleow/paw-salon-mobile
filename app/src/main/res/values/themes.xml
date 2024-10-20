@@ -1,13 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.PawSalon" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:statusBarColor">@color/white</item>
+    <style name="Base.Theme.PawSalon" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
 
-        <item name="colorPrimary">@color/mamamoblue</item>
-        <item name="colorPrimaryDark">@color/mamamoblue</item>
-        <item name="colorAccent">@color/mamamoblue</item>
+        <item name="colorPrimary">@color/mama_mo_blue</item>
+        <item name="colorPrimaryDark">@color/mama_mo_blue</item>
+        <item name="colorAccent">@color/mama_mo_blue</item>
     </style>
 
-    <style name="Theme.PawSalon" parent="Base.Theme.PawSalon" />
+    <style name="Base.Theme.PawSalon." parent="Base.Theme.PawSalon" />
 </resources>
+
+
+
