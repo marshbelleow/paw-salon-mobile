@@ -50,7 +50,7 @@
             android:layout_gravity="center">
 
             <ImageButton
-                android:id="@+id/cat_choice_button"
+                android:id="@+id/dog_choice_button"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:background="@drawable/image_button_states"

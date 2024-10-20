@@ -1,0 +1,237 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="890dp"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_petshampoo"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="28dp"
+                android:text="Pet Shampoo"
+                android:textAllCaps="false"
+                android:background="@drawable/petsuppliesbg"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold" />
+
+            <Button
+                android:id="@+id/btn_petpads"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="125dp"
+                android:layout_marginLeft="28dp"
+                android:text="Pet Pads"
+                android:textAllCaps="false"
+                android:background="@drawable/petsuppliesbg"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold" />
+
+            <Button
+                android:id="@+id/btn_dogfood"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="190dp"
+                android:layout_marginLeft="28dp"
+                android:text="Dog Food"
+                android:textAllCaps="false"
+                android:background="@drawable/petsuppliesbg"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold" />
+
+            <Button
+                android:id="@+id/btn_petbowl"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="255dp"
+                android:layout_marginLeft="28dp"
+                android:text="Pet Bowl"
+                android:textAllCaps="false"
+                android:background="@drawable/petsuppliesbg"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold" />
+            <Button
+                android:id="@+id/btn_catfood"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="320dp"
+                android:layout_marginLeft="28dp"
+                android:text="Cat Food"
+                android:textAllCaps="false"
+                android:background="@drawable/petsuppliesbg"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold" />
+
+            <Button
+                android:id="@+id/btn_dogleash"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="385dp"
+                android:layout_marginLeft="28dp"
+                android:text="Dog Leash"
+                android:textAllCaps="false"
+                android:background="@drawable/petsuppliesbg"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold" />
+
+            <Button
+                android:id="@+id/btn_petcologne"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="450dp"
+                android:layout_marginLeft="28dp"
+                android:text="Pet Cologne"
+                android:textAllCaps="false"
+                android:background="@drawable/petsuppliesbg"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold" />
+
+            <Button
+                android:id="@+id/btn_petcareproducts"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="515dp"
+                android:layout_marginLeft="28dp"
+                android:text="Pet Care Product"
+                android:textAllCaps="false"
+                android:background="@drawable/petsuppliesbg"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold" />
+
+            <Button
+                android:id="@+id/btn_pettoys"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="580dp"
+                android:layout_marginLeft="28dp"
+                android:text="Pet Toys"
+                android:textAllCaps="false"
+                android:background="@drawable/petsuppliesbg"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold" />
+
+
+            <Button
+                android:id="@+id/btn_petlitter"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="645dp"
+                android:layout_marginLeft="28dp"
+                android:text="Pet Litter"
+                android:textAllCaps="false"
+                android:background="@drawable/petsuppliesbg"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold" />
+
+            <Button
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="700dp"
+                android:layout_marginLeft="28dp"
+                android:textAllCaps="false"
+                android:background="@color/transparent"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/btn_settings"
+        android:layout_marginTop="-5dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="310dp"
+        android:backgroundTint="@color/transparent"
+        android:contentDescription="settings"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dots" />
+
+    <TextView
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Pet Supplies"
+        android:layout_marginLeft="25dp"
+        android:textAlignment="center"
+        android:textColor="@color/mama_mo_blue_darker"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-20dp"
+        android:layout_marginEnd="-20dp"
+        android:layout_marginBottom="-12dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Home"
+            android:scaleType="fitStart"
+            android:src="@drawable/homeicon" />
+
+        <ImageButton
+            android:id="@+id/btn_feedback"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Feedback"
+            android:scaleType="fitStart"
+            android:src="@drawable/pawicon" />
+
+        <ImageButton
+            android:id="@+id/btn_appointment"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Appointments"
+            android:scaleType="fitStart"
+            android:src="@drawable/plusicon" />
+
+        <ImageButton
+            android:id="@+id/btn_notifications"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Notifications"
+            android:scaleType="fitStart"
+            android:src="@drawable/notificationicon" />
+
+        <ImageButton
+            android:id="@+id/btn_profile"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="-4dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Profile"
+            android:scaleType="fitStart"
+            android:src="@drawable/profileicon" />
+    </LinearLayout>
+</RelativeLayout>
