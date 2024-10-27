@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.pawsalonapp"
+    namespace = "com.example.PawSalon"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.pawsalonapp"
+        applicationId = "com.example.PawSalon"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -48,7 +48,16 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("com.squareup.retrofit2:retrofit:2.9.0") // Retrofit
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0") // Gson Converter
+    implementation ("androidx.appcompat:appcompat:1.2.0")
+    // Add coroutines dependencies
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
+    // Add Retrofit and Gson dependencies
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Add MockWebServer for testing
+    testImplementation("com.squareup.okhttp3:mockwebserver:5.0.0-alpha.2")
 
 }

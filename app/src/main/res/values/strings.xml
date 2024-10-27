@@ -1,4 +1,18 @@
 <resources>
+    <string name="PawSalon">PawSalon</string>
+    <string name="get_started">Get Started</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="password">Password</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="food_water_bowl"><![CDATA[Food & Water Bowl]]></string>
+    <string name="play_pet_show_dog_shampoo_conditioner_anti_mange"><![CDATA[Play Pet Show Dog Shampoo & Conditioner Anti Mange]]></string>
+    <string name="goodest_dog_wet_food_grilled_chicken_liver"><![CDATA[Goodest Dog Wet Food Grilled Chicken & Liver]]></string>
+    <string name="password_security"><![CDATA[Password & Security]]></string>
+    <string name="goodest_dog_wet_food_griled_chicken_liver"><![CDATA[Goodest Dog Wet Food Griled Chicken & Liver]]></string>
+    <string name="play_pets_shampoo_conditioner_anti_tiques"><![CDATA[Play Pets Shampoo & Conditioner Anti Tiques]]></string>
+    <string name="cut_styles"><![CDATA[Cut & Styles]]></string>
     <string name="app_name">Paw Salon</string>
     <string name="sign_up_text">Sign Up</string>
     <string name="login_to_paw_salon">Login to Paw Salon</string>
@@ -6,11 +20,8 @@
     <string name="welcome_back_please_enter_your_details">Welcome back! Please enter your details</string>
     <string name="forgot_password_text">Forgot Password?</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
-    <string name="create_a_new_account">Create a new account</string>
     <string name="username">Username</string>
-    <string name="password">Password</string>
     <string name="confirm_password">Confirm password</string>
-    <string name="already_have_an_account">Already have an account?</string>
     <string name="sign_in_clickable_text">Sign In</string>
     <string name="enter_your_phone_number">Enter your phone number</string>
     <string name="reset_password_button">Reset Password</string>
@@ -55,4 +66,8 @@
     <string name="edit_pet_name">Edit Pet Name</string>
     <string name="edit_pet_age">Edit Pet Age</string>
     <string name="pet_breed">Pet Breed</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="personaldetails">PersonalDetails</string>
+    <string name="aboutpawsalon">aboutpawsalon</string>
+    <string name="about_pawsalon">about_pawsalon</string>
 </resources>

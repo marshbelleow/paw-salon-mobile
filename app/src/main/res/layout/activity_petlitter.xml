@@ -1,0 +1,217 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
+        <!-- Settings Button -->
+        <ImageButton
+            android:id="@+id/btn_settings"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="settings"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dots"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="Pet Litter"
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="780dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        tools:layout_editor_absoluteX="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/outerContainer5"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/photosbg">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/catlitter"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
+
+                <TextView
+                    android:id="@+id/textDayCare8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="115dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Fat Cat - Cat Litter"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textDayCare10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="115dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="1KG - PHP 210.00"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/outerContainer6"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/photosbg">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/doglitter"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
+
+                <TextView
+                    android:id="@+id/textDayCare12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="115dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Second Nature - Dog Litter"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textDayCare14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="115dp"
+                    android:layout_marginTop="50dp"
+                    android:text="1KG - PHP 200.00"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/outerContainer24"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/transparent">
+                <!-- Additional content can go here if needed -->
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation Buttons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- First ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Home"
+            android:src="@drawable/homeicon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_appointment"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Second ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_appointment"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Appointment"
+            android:src="@drawable/plusicon"
+            app:layout_constraintStart_toEndOf="@id/btn_home"
+            app:layout_constraintEnd_toStartOf="@id/btn_feedback"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Third ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_feedback"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Feedback"
+            android:src="@drawable/pawicon"
+            app:layout_constraintStart_toEndOf="@id/btn_appointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

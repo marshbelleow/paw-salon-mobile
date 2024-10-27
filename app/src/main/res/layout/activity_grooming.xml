@@ -1,0 +1,655 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- Settings Button -->
+        <ImageButton
+            android:id="@+id/btn_settings"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="settings"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dots"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="Grooming"
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="780dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        tools:layout_editor_absoluteX="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Size Classification and Pricing"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/mama_mo_blue_darker"/>
+
+            <LinearLayout
+                android:id="@+id/outerContainer69"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="-2dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/dog_note"
+                android:orientation="vertical"
+                android:padding="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/outerContainer70"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/cat_note"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/outerContainer1"
+                android:layout_width="135dp"
+                android:layout_height="165dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="250dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/photosbg"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bath_blow_dry"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
+
+
+                <TextView
+                    android:id="@+id/textBathBlowDry1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="Bath &amp; Blow Dry"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textBathBlowDryPrice1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="1dp"
+                    android:text="P 200 | P 300 | P 400"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/outerContainer2"
+                android:layout_width="135dp"
+                android:layout_height="165dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="250dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/photosbg"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/nailclipping"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
+
+                <TextView
+                    android:id="@+id/textBathBlowDry2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="Nail Clipping"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textBathBlowDryPrice2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:text="P 100 | P 1500"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <!-- Third Container -->
+            <LinearLayout
+                android:id="@+id/outerContainer3"
+                android:layout_width="135dp"
+                android:layout_height="165dp"
+                android:layout_below="@id/outerContainer1"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/photosbg"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/earcleaning"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
+
+                <TextView
+                    android:id="@+id/textGroomingService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="Ear Cleaning"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textGroomingPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="1dp"
+                    android:text="Dog: P 150 | Cat: P 100"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <!-- Fourth Container -->
+            <LinearLayout
+                android:id="@+id/outerContainer4"
+                android:layout_width="135dp"
+                android:layout_height="165dp"
+                android:layout_below="@id/outerContainer1"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/photosbg"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/facetrimming"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
+
+                <TextView
+                    android:id="@+id/textFleaTreatment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="Face Trimming"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textFleaPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:text="P 100 | P 150 | P 200"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/outerContainer5"
+                android:layout_width="135dp"
+                android:layout_height="165dp"
+                android:layout_below="@id/outerContainer3"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/photosbg"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sanitaryshaving"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
+
+                <TextView
+                    android:id="@+id/textFifthService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="Sanitary Shaving"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textFifthPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="1dp"
+                    android:text="P 100 | P 200"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <!-- Sixth Container -->
+            <LinearLayout
+                android:id="@+id/outerContainer6"
+                android:layout_width="135dp"
+                android:layout_height="165dp"
+                android:layout_below="@id/outerContainer3"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/photosbg"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pawtrimming"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
+
+                <TextView
+                    android:id="@+id/textSixthService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="Paw Trimming"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textSixthPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:text="P 100 | P 150 | P200"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/outerContainer7"
+                android:layout_width="136dp"
+                android:layout_height="165dp"
+                android:layout_below="@id/outerContainer5"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/photosbg"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/teethbrushing"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
+
+                <TextView
+                    android:id="@+id/textSeventhService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="Teeth Brushing"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textSeventhPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="1dp"
+                    android:text="P 150 | P 225"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <!-- Eighth Container -->
+            <LinearLayout
+                android:id="@+id/outerContainer8"
+                android:layout_width="135dp"
+                android:layout_height="170dp"
+                android:layout_below="@id/outerContainer5"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/photosbg"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_marginStart="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cutnstyle"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
+
+                <TextView
+                    android:id="@+id/textEighthService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Cut &amp; Style"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_SEEMORE"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/petsuppliesbg"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="See More"
+                    android:textAllCaps="false"
+                    android:textSize="8sp" />
+            </LinearLayout>
+
+            <!-- Ninth Container -->
+            <LinearLayout
+                android:id="@+id/outerContainer9"
+                android:layout_width="135dp"
+                android:layout_height="165dp"
+                android:layout_below="@id/outerContainer7"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/photosbg"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/basicgrooming"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
+
+                <TextView
+                    android:id="@+id/textNinthService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="Basic Grooming"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textNinthPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="1dp"
+                    android:text="S:350 | M:450 | L:550"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <!-- Tenth Container -->
+            <LinearLayout
+                android:id="@+id/outerContainer10"
+                android:layout_width="135dp"
+                android:layout_height="165dp"
+                android:layout_below="@id/outerContainer7"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/photosbg"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/fullgrooming"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
+
+                <TextView
+                    android:id="@+id/textTenthService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="Full Grooming"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textTenthPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:text="S:500 | M:600 | L:700"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="10sp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView19"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="80dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/basicgrooming"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
+
+                <LinearLayout
+                    android:id="@+id/outerContainer21"
+                    android:layout_width="315dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="600dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/transparent"
+                    android:orientation="horizontal" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation Buttons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- First ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Home"
+            android:src="@drawable/homeicon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_appointment"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Second ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_appointment"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Appointment"
+            android:src="@drawable/plusicon"
+            app:layout_constraintStart_toEndOf="@id/btn_home"
+            app:layout_constraintEnd_toStartOf="@id/btn_feedback"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Third ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_feedback"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Feedback"
+            android:src="@drawable/pawicon"
+            app:layout_constraintStart_toEndOf="@id/btn_appointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

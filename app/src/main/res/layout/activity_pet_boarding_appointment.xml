@@ -1,0 +1,596 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:padding="16dp"
+    tools:context=".view.PetBoardingAppointment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="Pet Boarding Appointment"
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="780dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        tools:layout_editor_absoluteX="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Please fill out this form to book pet boarding for your pet at the salon."
+            android:textAlignment="center"
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="55dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Client Name:"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etFirstName"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="200dp"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/appointment"
+                android:fontFamily="@font/poppins"
+                android:hint="First Name"
+                android:textColor="@color/black"
+                android:inputType="textPersonName"
+                android:maxLength="25"
+                android:padding="10sp"
+                android:textColorHint="@color/Gray"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/etLastName"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/appointment"
+                android:fontFamily="@font/poppins"
+                android:hint="Last Name"
+                android:textColor="@color/black"
+                android:inputType="textPersonName"
+                android:maxLength="25"
+                android:padding="10sp"
+                android:textColorHint="@color/Gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="130dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Phone:"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="156dp"
+                android:layout_marginEnd="200dp"
+                android:background="@drawable/appointment"
+                android:hint="09*********"
+                android:textColorHint="@color/Gray"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:padding="10sp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Email:"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="225dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/appointment"
+                android:fontFamily="@font/poppins"
+                android:hint="juandelacruz@gmail.com"
+                android:inputType="textPersonName"
+                android:maxLength="50"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/Gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="270dp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginStart="20dp"
+                android:text="Address: "
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="100"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:hint="# Barangay, Municipality, Province"
+                android:textColor="@color/black"
+                android:textColorHint="@color/Gray"
+                android:fontFamily="@font/poppins"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:inputType="textPersonName"
+                android:background="@drawable/appointment"
+                android:layout_marginTop="295dp" />
+
+            <TextView
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="340dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Your furbaby's name:"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etfurbabyname"
+                android:layout_width="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:maxLength="25"
+                android:layout_height="wrap_content"
+                android:hint="(Furbaby's Name)"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
+                android:textColorHint="@color/Gray"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:inputType="textPersonName"
+                android:background="@drawable/appointment"
+                android:layout_marginTop="365dp" />
+
+            <!--RADIO GROUP FOR DOG OR CAT-->
+            <RadioGroup
+                android:id="@+id/radioGroupPets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="410dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioDog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dog"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:buttonTint="@color/mama_mo_blue_darker" />
+
+
+                <RadioButton
+                    android:id="@+id/radioCat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mama_mo_blue_darker"
+                    android:layout_marginStart="40dp"
+                    android:text="Cat"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="455dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="How would you like your pet to check in to the salon?"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!--PICK UP OR WALK IN-->
+            <RadioGroup
+                android:id="@+id/radioGroupOptions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="480dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical"> <!-- Changed to vertical for better readability -->
+
+                <RadioButton
+                    android:id="@+id/radioOption1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="I will bring my pet to the salon."
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:buttonTint="@color/mama_mo_blue_darker" />
+
+                <RadioButton
+                    android:id="@+id/radioOption2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="I would like the salon staff to pick up my pet from my home."
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp"
+                    android:buttonTint="@color/mama_mo_blue_darker" />
+
+            </RadioGroup>
+
+
+            <!--DATE SELECTION-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="580dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="What day would you prefer to drop off your pet for boarding?"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etDate"
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="620dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/appointment"
+                android:clickable="true"
+                android:textColor="@color/black"
+                android:focusable="false"
+                android:fontFamily="@font/poppins"
+                android:hint="MM/DD/YY"
+                android:inputType="textPersonName"
+                android:padding="10sp"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/dateDropdown"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignTop="@+id/etDate"
+                android:layout_alignBottom="@+id/etDate"
+                android:layout_marginStart="280dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="9dp"
+                android:clickable="true"
+                android:contentDescription="Dropdown Arrow"
+                android:focusable="true"
+                android:src="@drawable/sortdown" />
+
+            <!-- TIME SELECTION-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="665dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="What time would you prefer to drop off your pet for boarding?"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etTime"
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_marginStart="20dp"
+                android:textSize="14sp"
+                android:hint="Select Time"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
+                android:inputType="textPersonName"
+                android:background="@drawable/appointment"
+                android:layout_marginTop="705dp"
+                android:focusable="false" />
+
+            <ImageView
+                android:id="@+id/timeDropdown"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignTop="@+id/etTime"
+                android:layout_alignBottom="@+id/etTime"
+                android:layout_marginStart="280dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="9dp"
+                android:clickable="true"
+                android:contentDescription="Dropdown Arrow"
+                android:focusable="true"
+                android:src="@drawable/sortdown" />
+
+            <!--DURATION OF PET BOARDING-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="750dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="How long will your pet be staying with us?"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!--DAYS-->
+
+            <EditText
+                android:id="@+id/etHmDays"
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_marginStart="20dp"
+                android:textSize="14sp"
+                android:hint="Days"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
+                android:inputType="textPersonName"
+                android:background="@drawable/appointment"
+                android:layout_marginTop="775dp"
+                android:focusable="false" />
+
+            <ImageView
+                android:id="@+id/daysDropdown"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignTop="@+id/etHmDays"
+                android:layout_alignBottom="@+id/etHmDays"
+                android:layout_marginStart="280dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="9dp"
+                android:clickable="true"
+                android:contentDescription="Dropdown Arrow"
+                android:focusable="true"
+                android:src="@drawable/sortdown" />
+
+            <!--HOURS-->
+            <EditText
+                android:id="@+id/etHours"
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_marginStart="20dp"
+                android:textSize="14sp"
+                android:hint="Hours"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
+                android:inputType="textPersonName"
+                android:background="@drawable/appointment"
+                android:layout_marginTop="830dp"
+                android:focusable="false" />
+
+            <ImageView
+                android:id="@+id/hoursDropdown"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignTop="@+id/etHours"
+                android:layout_alignBottom="@+id/etHours"
+                android:layout_marginStart="280dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="9dp"
+                android:clickable="true"
+                android:contentDescription="Dropdown Arrow"
+                android:focusable="true"
+                android:src="@drawable/sortdown" />
+
+            <TextView
+                android:layout_width="327dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="875dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Please specify any additional details we should be aware of:"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etspecifypb"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="915dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/appointment"
+                android:fontFamily="@font/poppins_light_italic"
+                android:gravity="top|start"
+                android:hint="N/A if none"
+                android:inputType="textMultiLine"
+                android:justificationMode="inter_word"
+                android:maxLength="255"
+                android:maxLines="8"
+                android:minLines="5"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/Gray"
+                android:textSize="14sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1080dp"
+                android:layout_marginBottom="40dp">
+
+                <ImageButton
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/x"
+                    android:scaleType="fitStart"
+                    android:contentDescription="Cancel Appointment"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_confirm"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/btn_confirm"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/ok"
+                    android:scaleType="fitStart"
+                    android:contentDescription="Confirm Appointment"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btn_cancel" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation Buttons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- First ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Home"
+            android:src="@drawable/homeicon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_appointment"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Second ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_appointment"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Appointment"
+            android:src="@drawable/plusicon"
+            app:layout_constraintStart_toEndOf="@id/btn_home"
+            app:layout_constraintEnd_toStartOf="@id/btn_feedback"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Third ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_feedback"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Feedback"
+            android:src="@drawable/pawicon"
+            app:layout_constraintStart_toEndOf="@id/btn_appointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

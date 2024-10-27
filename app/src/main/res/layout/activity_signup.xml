@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".view.SignupActivity">
+    tools:context=".view.SignUpActivity">
 
     <!-- Logo -->
     <ImageView
@@ -79,7 +79,11 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    app:errorTextAppearance="@style/CustomTextInputError">
+                    app:errorTextAppearance="@style/CustomTextInputError"
+                    app:endIconDrawable="@drawable/person_icon"
+                    app:endIconTint="@color/mama_mo_blue_darker"
+                    app:endIconContentDescription="@string/email_address"
+                    app:endIconMode="custom">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/fullname_setupEt"
@@ -108,7 +112,7 @@
                     android:minHeight="62dp"
                     app:errorTextAppearance="@style/CustomTextInputError"
                     app:endIconDrawable="@drawable/person_icon"
-                    app:endIconTint="@color/Gray"
+                    app:endIconTint="@color/mama_mo_blue_darker"
                     app:endIconContentDescription="@string/email_address"
                     app:endIconMode="custom">
 
@@ -137,7 +141,7 @@
                     android:minHeight="62dp"
                     app:errorTextAppearance="@style/CustomTextInputError"
                     app:endIconDrawable="@drawable/email_icon"
-                    app:endIconTint="@color/Gray"
+                    app:endIconTint="@color/mama_mo_blue_darker"
                     app:endIconContentDescription="@string/email_address"
                     app:endIconMode="custom">
 
@@ -173,7 +177,7 @@
                     android:minHeight="62dp"
                     app:errorTextAppearance="@style/CustomTextInputError"
                     app:passwordToggleEnabled="true"
-                    app:passwordToggleTint="@color/Gray">
+                    app:passwordToggleTint="@color/mama_mo_blue_darker">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/signup_PasswordEt"
@@ -200,7 +204,7 @@
                     android:minHeight="62dp"
                     app:errorTextAppearance="@style/CustomTextInputError"
                     app:passwordToggleEnabled="true"
-                    app:passwordToggleTint="@color/Gray">
+                    app:passwordToggleTint="@color/mama_mo_blue_darker">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/signup_cPasswordEt"
@@ -226,14 +230,13 @@
 
                     <Button
                         android:id="@+id/signup_bigBtn"
-                        style="@style/Button5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
                         android:layout_marginTop="2dp"
                         android:layout_marginEnd="24dp"
                         android:layout_marginBottom="5dp"
-                        android:backgroundTint="@color/mamamoblue"
+                        android:background="@drawable/rounded_button"
                         android:elevation="15dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:gravity="center"
