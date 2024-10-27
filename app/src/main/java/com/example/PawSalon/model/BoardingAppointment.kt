@@ -4,7 +4,12 @@ data class BoardingAppointment(
     val phone: String,
     val email: String,
     val address: String,
-    val furBabyName: String,
+    val furbabysName: String,
     val petType: String,
-    val additionalDetails: String? // This can remain nullable if it's optional
+    val petCheckIn: String,
+    val checkInDate: String,
+    val checkInTime: String,
+    val Days: Int,
+    val Hours: Int,
+    val additionalDetails: String
 )

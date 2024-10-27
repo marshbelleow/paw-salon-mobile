@@ -8,18 +8,27 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope // Import lifecycleScope
 import com.example.PawSalon.R
+import com.example.PawSalon.model.Feedback
+import com.example.PawSalon.view_models.RetrofitInstance
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import retrofit2.HttpException
 
 class FeedbackActivity : AppCompatActivity() {
+    companion object {
+        private const val MAX_RATING = 5
+    }
 
     private lateinit var starButtons: List<ImageButton>
-    private var currentRating = 0 // Variable to store the selected rating
+    private var currentRating = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feedback)
 
-        // Initialize the star buttons
         starButtons = listOf(
             findViewById(R.id.star1),
             findViewById(R.id.star2),
@@ -28,14 +37,10 @@ class FeedbackActivity : AppCompatActivity() {
             findViewById(R.id.star5)
         )
 
-        // Set click listeners for each star
-        for (i in starButtons.indices) {
-            starButtons[i].setOnClickListener {
-                updateRating(i + 1) // Update rating when a star is clicked
-            }
+        starButtons.forEachIndexed { index, button ->
+            button.setOnClickListener { updateRating(index + 1) }
         }
 
-        // Handle feedback submission
         val feedbackEditText = findViewById<EditText>(R.id.etspecifypb)
         val submitButton = findViewById<Button>(R.id.login_bigBtn)
 
@@ -43,70 +48,70 @@ class FeedbackActivity : AppCompatActivity() {
             handleSubmitFeedback(feedbackEditText)
         }
 
-        // Set up navigation buttons
         setupButtonListeners()
     }
 
-    // Function to update the star rating visuals
     private fun updateRating(rating: Int) {
         currentRating = rating
-        for (i in starButtons.indices) {
-            if (i < rating) {
-                // Highlight the star (selected)
-                starButtons[i].setImageResource(R.drawable.rating_selected)
-            } else {
-                // Unhighlight the star (unselected)
-                starButtons[i].setImageResource(R.drawable.rating_unselected)
-            }
+        starButtons.forEachIndexed { index, button ->
+            button.setImageResource(
+                if (index < rating) R.drawable.rating_selected
+                else R.drawable.rating_unselected
+            )
         }
     }
 
-    // Function to handle feedback submission
     private fun handleSubmitFeedback(feedbackEditText: EditText) {
         val feedbackText = feedbackEditText.text.toString().trim()
 
-        if (feedbackText.isEmpty()) {
-            Toast.makeText(this, "Please enter your feedback!", Toast.LENGTH_SHORT).show()
-        } else if (currentRating == 0) {
-            Toast.makeText(this, "Please select a rating!", Toast.LENGTH_SHORT).show()
-        } else {
-            // Here you would handle feedback without API call
-            Toast.makeText(this, "Feedback Submitted: Rating $currentRating, Comment: $feedbackText", Toast.LENGTH_SHORT).show()
-            feedbackEditText.text.clear()
-            updateRating(0)
+        when {
+            feedbackText.isEmpty() -> showToast("Please enter your feedback!")
+            currentRating == 0 -> showToast("Please select a rating!")
+            else -> {
+                val feedback = Feedback(currentRating, feedbackText)
+
+                // Use lifecycleScope to launch the coroutine
+                lifecycleScope.launch(Dispatchers.IO) {
+                    try {
+                        val response = RetrofitInstance.api.submitFeedback(feedback)
+                        if (response.isSuccessful) {
+                            withContext(Dispatchers.Main) {
+                                showToast("Feedback Submitted: Rating $currentRating, Comment: $feedbackText")
+                                feedbackEditText.text.clear()
+                                updateRating(0)
+                            }
+                        } else {
+                            withContext(Dispatchers.Main) {
+                                showToast("Submission failed: ${response.message()}")
+                            }
+                        }
+                    } catch (e: HttpException) {
+                        withContext(Dispatchers.Main) {
+                            showToast("Submission error: ${e.message()}")
+                        }
+                    }
+                }
+            }
         }
     }
 
-    // Function to set up button listeners for bottom navigation
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
     private fun setupButtonListeners() {
-        // Home button listener
-        findViewById<ImageButton>(R.id.btn_home)?.let { homeButton ->
-            homeButton.setOnClickListener {
-                val intent = Intent(this, HomeScreenActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-                startActivity(intent)
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
-            }
+        findViewById<ImageButton>(R.id.btn_home)?.setOnClickListener {
+            navigateTo(HomeScreenActivity::class.java)
         }
 
-        // Appointment button listener
-        findViewById<ImageButton>(R.id.btn_appointment)?.let { appointmentButton ->
-            appointmentButton.setOnClickListener {
-                val intent = Intent(this, ServiceAppointmentActivity::class.java)
-                startActivity(intent)
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
-            }
+        findViewById<ImageButton>(R.id.btn_appointment)?.setOnClickListener {
+            navigateTo(ServiceAppointmentActivity::class.java)
         }
 
-        // Settings button listener
-        findViewById<ImageButton>(R.id.btn_settings)?.let { settingsButton ->
-            settingsButton.setOnClickListener {
-                startActivity(Intent(this, SettingsActivity::class.java))
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-            }
+        findViewById<ImageButton>(R.id.btn_settings)?.setOnClickListener {
+            navigateTo(SettingsActivity::class.java)
         }
 
-        // Set button tint for active and inactive states
         findViewById<ImageButton>(R.id.btn_feedback)?.imageTintList =
             ContextCompat.getColorStateList(this, R.color.bottom_nav_active)
 
@@ -119,5 +124,13 @@ class FeedbackActivity : AppCompatActivity() {
             findViewById<ImageButton>(id)?.imageTintList =
                 ContextCompat.getColorStateList(this, R.color.bottom_nav_inactive)
         }
+    }
+
+    private fun <T> navigateTo(activity: Class<T>) {
+        val intent = Intent(this, activity).apply {
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+        }
+        startActivity(intent)
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
     }
 }

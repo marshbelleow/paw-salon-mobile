@@ -4,6 +4,7 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -15,6 +16,14 @@ import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
 import java.text.SimpleDateFormat
 import java.util.*
+import com.example.PawSalon.network.ApiService
+import com.example.PawSalon.network.ServiceAppointmentRequest
+import com.example.PawSalon.network.ServiceAppointmentResponse
+import com.example.PawSalon.view_models.RetrofitInstance
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class ServiceAppointmentActivity : AppCompatActivity() {
     private lateinit var etFirstName: EditText
@@ -28,12 +37,13 @@ class ServiceAppointmentActivity : AppCompatActivity() {
     private lateinit var etPetName: EditText
     private lateinit var etDate: EditText
     private lateinit var etTime: EditText
-    private lateinit var etService: EditText
-    private lateinit var etSelectedService: EditText
     private lateinit var cancelBtn: ImageButton
     private lateinit var confirmBtn: ImageButton
+    private lateinit var etServiceCategory: EditText   // For service type/category
+    private lateinit var etChosenService: EditText
     private val calendar = Calendar.getInstance()
     private var selectedTime: String? = null
+    private lateinit var apiService: ApiService
 
     private val serviceOptions = mapOf(
         "Grooming Services" to arrayOf(
@@ -65,18 +75,30 @@ class ServiceAppointmentActivity : AppCompatActivity() {
         radioCat = findViewById(R.id.radioCat)
         etPetName = findViewById(R.id.etfurbabyname)
         etDate = findViewById(R.id.etDate)
-        etService = findViewById(R.id.etservice)
-        etSelectedService = findViewById(R.id.etSelectedService)
+        etServiceCategory = findViewById(R.id.etservice)
+        etChosenService = findViewById(R.id.etSelectedService)
         etTime = findViewById(R.id.ettime)
         cancelBtn = findViewById(R.id.btn_cancel)
         confirmBtn = findViewById(R.id.btn_confirm)
 
+        // Initialize API service
+        apiService = RetrofitInstance.api
+
         // Date and time selection
         etDate.setOnClickListener { showDateSelectionDialog() }
         etTime.setOnClickListener { showTimePicker() }
-        etService.setOnClickListener { showServiceSelectionDialog() }
+        etServiceCategory.setOnClickListener { showServiceSelectionDialog() }
 
         setupButtonListeners()
+
+        confirmBtn.setOnClickListener {
+            val errors = validateFields()
+            if (errors.isEmpty()) {
+                submitAppointment()
+            } else {
+                displayErrors(errors)
+            }
+        }
     }
 
     // Setup bottom navigation button listeners
@@ -125,8 +147,8 @@ class ServiceAppointmentActivity : AppCompatActivity() {
             etEmail.text.isEmpty() &&
             etPetName.text.isEmpty() &&
             etDate.text.isEmpty() &&
-            etService.text.isEmpty() &&
-            etSelectedService.text.isEmpty() &&
+            etServiceCategory.text.isEmpty() &&
+            etChosenService.text.isEmpty() &&
             etTime.text.isEmpty() &&
             animalSelectionGroup.checkedRadioButtonId == -1) {
             errorMessages.add("All fields are required.")
@@ -166,11 +188,11 @@ class ServiceAppointmentActivity : AppCompatActivity() {
                 errorMessages.add("Date is required.")
             }
 
-            if (etService.text.isEmpty()) {
+            if (etServiceCategory.text.isEmpty()) {
                 errorMessages.add("Service category is required.")
             }
 
-            if (etSelectedService.text.isEmpty()) {
+            if (etChosenService.text.isEmpty()) {
                 errorMessages.add("Specific service is required.")
             }
 
@@ -192,8 +214,8 @@ class ServiceAppointmentActivity : AppCompatActivity() {
             etEmail.error = null
             etPetName.error = null
             etDate.error = null
-            etService.error = null
-            etSelectedService.error = null
+            etServiceCategory.error = null
+            etChosenService.error = null
             etTime.error = null
         }
 
@@ -201,117 +223,118 @@ class ServiceAppointmentActivity : AppCompatActivity() {
     }
 
     private fun displayErrors(errors: List<String>) {
-        // Show the errors in Toasts
-        for (error in errors) {
-            Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+        val errorMessage = errors.joinToString("\n")
+        Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
+    }
+
+    private fun showDateSelectionDialog() {
+        val constraintsBuilder = CalendarConstraints.Builder()
+            .setValidator(DateValidatorPointForward.now())
+
+        val datePicker = MaterialDatePicker.Builder.datePicker()
+            .setTitleText("Select Date")
+            .setCalendarConstraints(constraintsBuilder.build())
+            .build()
+
+        datePicker.show(supportFragmentManager, "MATERIAL_DATE_PICKER")
+
+        datePicker.addOnPositiveButtonClickListener { selection ->
+            val dateFormat = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
+            etDate.setText(dateFormat.format(selection))
         }
     }
 
-    private fun isValidPhoneNumber(phone: String): Boolean {
-        // Validates if the phone number is at least 10 digits long and contains only digits
-        return phone.length >= 11 && phone.all { it.isDigit() }
+    private fun showTimePicker() {
+        val currentHour = calendar.get(Calendar.HOUR_OF_DAY)
+        val currentMinute = calendar.get(Calendar.MINUTE)
+
+        val timePickerDialog = TimePickerDialog(
+            this,
+            { _, hourOfDay, minute ->
+                val amPm = if (hourOfDay >= 12) "PM" else "AM"
+                val hourFormatted = if (hourOfDay > 12) hourOfDay - 12 else hourOfDay
+                selectedTime = String.format(Locale.getDefault(), "%02d:%02d %s", hourFormatted, minute, amPm)
+                etTime.setText(selectedTime)
+            }, currentHour, currentMinute, false
+        )
+
+        timePickerDialog.show()
+    }
+
+    private fun showServiceSelectionDialog() {
+        val serviceCategories = serviceOptions.keys.toTypedArray()
+
+        AlertDialog.Builder(this)
+            .setTitle("Select Service Category")
+            .setItems(serviceCategories) { _, index ->
+                selectedServiceCategory = serviceCategories[index]
+                showSpecificServiceDialog(selectedServiceCategory)
+            }
+            .show()
+    }
+
+    private fun showSpecificServiceDialog(serviceCategory: String) {
+        val specificServices = serviceOptions[serviceCategory]
+        specificServices?.let { services ->
+            AlertDialog.Builder(this)
+                .setTitle("Select Specific Service")
+                .setItems(services) { _, index ->
+                    etChosenService.setText(services[index])
+                    etServiceCategory.setText(serviceCategory)
+                }
+                .show()
+        }
+    }
+
+    private fun submitAppointment() {
+        val firstName = etFirstName.text.toString().trim()
+        val lastName = etLastName.text.toString().trim()
+        val phoneNumber = etPhoneNumber.text.toString().trim()
+        val address = etAddress.text.toString().trim()
+        val email = etEmail.text.toString().trim()
+        val petName = etPetName.text.toString().trim()
+        val date = etDate.text.toString().trim()
+        val time = etTime.text.toString().trim()
+        val animalType = if (radioDog.isChecked) "Dog" else "Cat"
+        val serviceCategory = etServiceCategory.text.toString().trim() // New variable for service type
+        val chosenService = etChosenService.text.toString().trim()    // For chosen specific service
+
+        // Adjust for additional details if needed
+        val appointmentRequest = ServiceAppointmentRequest(
+            firstName, lastName, phoneNumber, address, email, petName, animalType, date, time, serviceCategory, chosenService)
+
+        apiService.createServiceAppointment(appointmentRequest).enqueue(object : Callback<ServiceAppointmentResponse> {
+            override fun onResponse(
+                call: Call<ServiceAppointmentResponse>,
+                response: Response<ServiceAppointmentResponse>
+            ) {
+                if (response.isSuccessful) {
+                    Toast.makeText(this@ServiceAppointmentActivity, "Appointment submitted successfully!", Toast.LENGTH_SHORT).show()
+                } else {
+                    val errorResponse = response.errorBody()?.string() ?: "Unknown error"
+                    Log.e("ServiceAppointmentActivity", "Error Response: $errorResponse")
+                    Toast.makeText(this@ServiceAppointmentActivity, "Failed to submit appointment: $errorResponse", Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ServiceAppointmentResponse>, t: Throwable) {
+                Toast.makeText(this@ServiceAppointmentActivity, "Error: ${t.message}", Toast.LENGTH_LONG).show()
+            }
+        })
+    }
+
+    private fun isValidPhoneNumber(phoneNumber: String): Boolean {
+        // Validate phone number format
+        return phoneNumber.matches(Regex("^\\+?[0-9]{10,13}\$"))
     }
 
     private fun isValidEmail(email: String): Boolean {
-        // Checks if the email matches the standard email format
+        // Validate email format
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
     private fun isValidAddress(address: String): Boolean {
-        // Checks if the address is not blank and has a minimum length
-        return address.isNotBlank() && address.length >= 5
-    }
-
-    // Clear all form fields
-    private fun clearFields() {
-        etFirstName.text.clear()
-        etLastName.text.clear()
-        etPhoneNumber.text.clear()
-        etAddress.text.clear()
-        etEmail.text.clear()
-        animalSelectionGroup.clearCheck()
-        etPetName.text.clear()
-        etDate.text.clear()
-        etService.text.clear()
-        etSelectedService.text.clear()
-        etTime.text.clear()
-    }
-
-    // Function to display the date selection dialog
-    private fun showDateSelectionDialog() {
-        val datePicker = MaterialDatePicker.Builder.datePicker()
-            .setTitleText("Select Appointment Date")
-            .setCalendarConstraints(
-                CalendarConstraints.Builder()
-                    .setValidator(DateValidatorPointForward.now())
-                    .build()
-            )
-            .build()
-
-        datePicker.addOnPositiveButtonClickListener { selection ->
-            val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-            etDate.setText(sdf.format(Date(selection)))
-        }
-        datePicker.show(supportFragmentManager, "MATERIAL_DATE_PICKER")
-    }
-
-    // Function to display the time picker dialog
-    private fun showTimePicker() {
-        // Show an alert dialog with the availability note
-        val availabilityDialog = AlertDialog.Builder(this)
-            .setTitle("Salon Availability")
-            .setMessage("Please note that the salon is available from 9 AM to 6 PM.")
-            .setPositiveButton("OK") { dialog, _ ->
-                dialog.dismiss() // Dismiss the dialog and show the time picker
-                val hour = calendar.get(Calendar.HOUR_OF_DAY) // Get current hour in 24-hour format
-                val minute = calendar.get(Calendar.MINUTE)
-
-                // Create the time picker dialog
-                val timePicker = TimePickerDialog(
-                    this,
-                    { _, selectedHour, selectedMinute ->
-                        // Format the hour and minute to 12-hour format with AM/PM
-                        val amPm = if (selectedHour < 12) "AM" else "PM"
-                        val hour12 = if (selectedHour == 0 || selectedHour == 12) 12 else selectedHour % 12 // Convert to 12-hour format
-                        val format = String.format("%02d:%02d %s", hour12, selectedMinute, amPm)
-                        etTime.setText(format)
-                        selectedTime = format
-                    },
-                    hour,
-                    minute,
-                    false // Use false for 12-hour format
-                )
-                timePicker.show() // Show the time picker dialog
-            }
-            .setCancelable(false) // Make the dialog non-cancelable
-            .create()
-
-        availabilityDialog.show() // Show the availability note dialog
-    }
-
-    // Function to show a dialog to select the service
-    private fun showServiceSelectionDialog() {
-        val serviceDialogBuilder = AlertDialog.Builder(this)
-        serviceDialogBuilder.setTitle("Select a Service Category")
-
-        serviceDialogBuilder.setItems(serviceOptions.keys.toTypedArray()) { _, which ->
-            selectedServiceCategory = serviceOptions.keys.elementAt(which)
-            showSpecificServiceDialog(selectedServiceCategory)
-        }
-
-        serviceDialogBuilder.show()
-    }
-
-    // Function to show specific service options based on selected category
-    private fun showSpecificServiceDialog(category: String) {
-        val specificServiceDialogBuilder = AlertDialog.Builder(this)
-        specificServiceDialogBuilder.setTitle("Select a Specific Service")
-
-        specificServiceDialogBuilder.setItems(serviceOptions[category]) { _, which ->
-            etService.setText(category)
-            etSelectedService.setText(serviceOptions[category]?.get(which))
-        }
-
-        specificServiceDialogBuilder.show()
+        // Validate address (basic check for now)
+        return address.isNotEmpty() && address.length > 5
     }
 }

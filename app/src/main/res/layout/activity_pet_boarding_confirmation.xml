@@ -51,23 +51,20 @@
                 android:fontFamily="@font/poppins_bold"
                 android:layout_marginTop="16dp"
                 android:gravity="end" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Button container -->
     <LinearLayout
         android:id="@+id/button_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="108dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865">
+        tools:layout_editor_absoluteX="48dp">
 
         <!-- Cancel Button -->
         <Button
@@ -96,4 +93,6 @@
             android:textSize="16sp"
             app:cornerRadius="16dp" />
     </LinearLayout>
+
+    <!-- Button container -->
 </androidx.constraintlayout.widget.ConstraintLayout>

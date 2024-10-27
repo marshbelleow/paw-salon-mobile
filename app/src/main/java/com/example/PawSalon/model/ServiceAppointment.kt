@@ -1,15 +1,16 @@
 package com.example.PawSalon.model
 
 data class ServiceAppointment(
-    val client_name: String,
+    val firstName: String,
+    val lastName: String,
     val phone: String,
     val email: String,
     val address: String?,
-    val furbabys_name: String,
-    val pet_type: String,
-    val serviceCategory: String,
+    val furbabysName: String,
+    val petType: String,
+    val appointmentDate: String,
+    val appointmentTime: String,
+    val serviceType: String,     // Not repeated
     val chosenService: String,
-    val date: String,
-    val time: String,
-    val additional_Details: String,
+    val additionalDetails: String? // Follow camelCase for consistency
 )

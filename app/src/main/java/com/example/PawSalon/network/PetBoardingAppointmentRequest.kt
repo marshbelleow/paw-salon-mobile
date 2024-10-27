@@ -1,7 +1,6 @@
 package com.example.PawSalon.network
 
-// Data model for Boarding Appointment request
-data class BoardingAppointmentRequest(
+data class PetBoardingAppointmentRequest(
     val firstName: String,
     val lastName: String,
     val phone: String,
@@ -9,7 +8,7 @@ data class BoardingAppointmentRequest(
     val address: String,
     val petName: String,
     val petType: String,
-    val boardingType: String,
+    val optionType: String,
     val date: String,
     val time: String,
     val additionalDetails: String

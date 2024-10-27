@@ -16,7 +16,7 @@
             android:gravity="center"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="Settings"
+            android:text="More"
             android:textColor="@color/mama_mo_blue_darker"
             android:textSize="22sp"
             android:textStyle="bold"
@@ -27,46 +27,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
 
+
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp">
-
-            <ImageButton
-                android:id="@+id/btn_password_security"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                android:layout_marginEnd="16dp"
-                android:backgroundTint="@color/transparent"
-                android:contentDescription="@string/password_security"
-                android:scaleType="centerCrop"
-                android:src="@drawable/passwordsecurity"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/about_pawsalon"
-                tools:ignore="NotSibling" />
-
-            <TextView
-                android:id="@+id/text_password_security"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="@string/password_security"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="14sp"
-                android:textStyle="bold"
-
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btn_password_security"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="NotSibling" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="160dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp">
 
@@ -80,7 +46,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/aboutus"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_password_security"
+                app:layout_constraintTop_toBottomOf="@id/btn_logout"
                 tools:ignore="NotSibling" />
 
             <TextView
@@ -102,11 +68,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="160dp"
             android:layout_marginEnd="30dp">
 
             <ImageButton
-                android:id="@+id/logout"
+                android:id="@+id/btn_logout"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="24dp"
@@ -130,7 +96,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/logout"
+                app:layout_constraintStart_toEndOf="@+id/btn_logout"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

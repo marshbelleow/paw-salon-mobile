@@ -18,7 +18,6 @@ class SettingsActivity : AppCompatActivity() {
         // Feedback button navigation
         val feedbackImageButton: ImageButton = findViewById(R.id.btn_feedback)
         feedbackImageButton.setOnClickListener {
-            // Navigate directly to FeedbackActivity
             val intent = Intent(this, FeedbackActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
@@ -27,7 +26,6 @@ class SettingsActivity : AppCompatActivity() {
         // Appointment button navigation
         val appointmentImageButton: ImageButton = findViewById(R.id.btn_appointment)
         appointmentImageButton.setOnClickListener {
-            // Navigate directly to AppointmentActivity
             val intent = Intent(this, ServiceAppointmentActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
@@ -41,19 +39,36 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         }
+
         // About PawSalon button navigation
         val aboutPawSalonButton: ImageButton = findViewById(R.id.about_pawsalon)
         aboutPawSalonButton.setOnClickListener {
-            // Navigate directly to Activity_About_PawSalon
             val intent = Intent(this, AboutUsActivity::class.java)
             startActivity(intent)
         }
+
         // TextView click listener for About PawSalon
         val textAboutPawSalon: TextView = findViewById(R.id.text_about_pawsalon)
         textAboutPawSalon.setOnClickListener {
-            // Navigate directly to AboutUsActivity
             val intent = Intent(this, AboutUsActivity::class.java)
             startActivity(intent)
+        }
+
+        // Logout button navigation
+        val logoutButton: ImageButton = findViewById(R.id.btn_logout)
+        logoutButton.setOnClickListener {
+            val intent = Intent(this, LoginSignupActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        }
+        // TextView click listener for Logout
+        val textLogout: TextView = findViewById(R.id.textlogout)
+        textLogout.setOnClickListener {
+            val intent = Intent(this, LoginSignupActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         }
     }
 }
