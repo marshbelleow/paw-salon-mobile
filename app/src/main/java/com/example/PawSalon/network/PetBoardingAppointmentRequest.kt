@@ -1,6 +1,7 @@
+// PawSalonApiService.kt
 package com.example.PawSalon.network
 
-data class PetBoardingAppointmentRequest(
+data class BoardingAppointmentRequest(
     val firstName: String,
     val lastName: String,
     val phone: String,

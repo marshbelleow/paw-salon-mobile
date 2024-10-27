@@ -22,10 +22,9 @@ interface ApiService {
     @POST("service-appointments")
     fun createServiceAppointment(@Body request: ServiceAppointmentRequest): Call<ServiceAppointmentResponse>
 
-    // Boarding Appointment APIs
-    // Create a new boarding appointment
-    @POST("boarding-appointments")
-    fun createBoardingAppointment(@Body request: PetBoardingAppointmentRequest): Call<PetBoardingAppointmentResponse>
+    //Pet Boarding Appointment APIs
+    @POST("appointments/book")
+    fun bookAppointment(@Body request: BoardingAppointmentRequest): Call<BoardingAppointmentResponse>
 
     // Feedback
     @POST("submitFeedback") // Adjust the endpoint according to your API

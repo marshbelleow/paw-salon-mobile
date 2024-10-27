@@ -38,11 +38,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, View.OnFocusCha
         mBinding.signUpButton.setOnClickListener {
             navigateToSignUp()
         }
-
-        // Navigate to ForgotPassword activity
-        mBinding.forgotPasswordButton.setOnClickListener {
-            navigateToForgotPassword()
-        }
     }
 
     private fun navigateToSignUp() {

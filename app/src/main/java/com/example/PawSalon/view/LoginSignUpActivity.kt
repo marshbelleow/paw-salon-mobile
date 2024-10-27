@@ -23,6 +23,7 @@ class LoginSignupActivity : AppCompatActivity() {
         // Find buttons by their ID
         val loginButton: Button = findViewById(R.id.btn_Login)
         val signupButton: Button = findViewById(R.id.btn_Signup)
+        val guestButton: Button = findViewById(R.id.guest)
 
         // Set click listeners for buttons
         loginButton.setOnClickListener {
@@ -31,6 +32,11 @@ class LoginSignupActivity : AppCompatActivity() {
 
         signupButton.setOnClickListener {
             navigateToSignup()
+        }
+
+        // Set click listener for guest button to navigate to HomeActivity
+        guestButton.setOnClickListener {
+            navigateToHome()
         }
     }
 
@@ -44,5 +50,11 @@ class LoginSignupActivity : AppCompatActivity() {
     private fun navigateToSignup() {
         val signupIntent = Intent(this, SignUpActivity::class.java)
         startActivity(signupIntent)
+    }
+
+    // Function to navigate to HomeActivity (Guest mode)
+    private fun navigateToHome() {
+        val homeIntent = Intent(this, HomeScreenActivity::class.java)
+        startActivity(homeIntent)
     }
 }

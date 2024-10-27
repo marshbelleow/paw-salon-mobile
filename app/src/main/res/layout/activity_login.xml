@@ -13,7 +13,7 @@
         android:id="@+id/logoImage"
         android:layout_width="230dp"
         android:layout_height="100dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/transwordlogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,8 +24,8 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/loginCard"
         android:layout_width="320dp"
-        android:layout_height="380dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="320dp"
+        android:layout_marginTop="60dp"
         android:backgroundTint="@color/lightblue"
         app:cardCornerRadius="25dp"
         app:cardUseCompatPadding="true"
@@ -36,7 +36,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="340dp"
+            android:layout_height="320dp"
             android:layout_gravity="center"
             android:orientation="vertical"
             android:padding="10dp">
@@ -122,23 +122,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/forgot_password_button"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:layout_gravity="end"
-                android:layout_marginEnd="10dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true"
-                android:fontFamily="@font/poppins"
-                android:text="@string/forgot_password_text"
-                android:textAlignment="textEnd"
-                android:textAllCaps="false"
-                android:textColor="@color/my_primary"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <Button
                 android:id="@+id/login_bigBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -199,7 +182,7 @@
         android:id="@+id/bg_image"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/petsbg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         activityScope.launch {
             delay(1200)
-            val intent = Intent(this@MainActivity, HomeScreenActivity::class.java)
+            val intent = Intent(this@MainActivity, LoginSignupActivity::class.java)
             startActivity(intent)
             finish()
         }

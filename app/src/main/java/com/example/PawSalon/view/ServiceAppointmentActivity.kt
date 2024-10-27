@@ -296,12 +296,12 @@ class ServiceAppointmentActivity : AppCompatActivity() {
         val date = etDate.text.toString().trim()
         val time = etTime.text.toString().trim()
         val animalType = if (radioDog.isChecked) "Dog" else "Cat"
-        val serviceCategory = etServiceCategory.text.toString().trim() // New variable for service type
-        val chosenService = etChosenService.text.toString().trim()    // For chosen specific service
+        val serviceCategory = etServiceCategory.text.toString().trim()
+        val chosenService = etChosenService.text.toString().trim()
 
-        // Adjust for additional details if needed
         val appointmentRequest = ServiceAppointmentRequest(
-            firstName, lastName, phoneNumber, address, email, petName, animalType, date, time, serviceCategory, chosenService)
+            firstName, lastName, phoneNumber, address, email, petName, animalType, date, time, serviceCategory, chosenService
+        )
 
         apiService.createServiceAppointment(appointmentRequest).enqueue(object : Callback<ServiceAppointmentResponse> {
             override fun onResponse(
@@ -310,17 +310,31 @@ class ServiceAppointmentActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     Toast.makeText(this@ServiceAppointmentActivity, "Appointment submitted successfully!", Toast.LENGTH_SHORT).show()
+                    // Navigate to another activity or clear fields if necessary
                 } else {
-                    val errorResponse = response.errorBody()?.string() ?: "Unknown error"
-                    Log.e("ServiceAppointmentActivity", "Error Response: $errorResponse")
-                    Toast.makeText(this@ServiceAppointmentActivity, "Failed to submit appointment: $errorResponse", Toast.LENGTH_LONG).show()
+                    handleErrorResponse(response)
                 }
             }
 
             override fun onFailure(call: Call<ServiceAppointmentResponse>, t: Throwable) {
-                Toast.makeText(this@ServiceAppointmentActivity, "Error: ${t.message}", Toast.LENGTH_LONG).show()
+                Log.e("ServiceAppointmentActivity", "Error: ${t.message}", t)
+                Toast.makeText(this@ServiceAppointmentActivity, "Network error: ${t.message}", Toast.LENGTH_LONG).show()
             }
         })
+    }
+
+    private fun handleErrorResponse(response: Response<ServiceAppointmentResponse>) {
+        val errorBody = response.errorBody()?.string()
+        val errorMessage: String = when (response.code()) {
+            400 -> "Bad request. Please check your input."
+            401 -> "Unauthorized. Please log in."
+            404 -> "Service not found."
+            500 -> "Server error. Please try again later."
+            else -> "An unknown error occurred."
+        }
+
+        Log.e("ServiceAppointmentActivity", "Error Response: $errorBody")
+        Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
     }
 
     private fun isValidPhoneNumber(phoneNumber: String): Boolean {

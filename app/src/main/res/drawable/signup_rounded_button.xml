@@ -1,5 +1,6 @@
 <!-- res/drawable/signup_rounded_button.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/mama_mo_blue_darker" /> <!-- Background color -->
-    <corners android:radius="50dp" /> <!-- Rounded corners -->
+    <corners android:radius="50dp" />
+    <tint android:color="@color/my_primary" /><!-- Rounded corners -->
 </shape>

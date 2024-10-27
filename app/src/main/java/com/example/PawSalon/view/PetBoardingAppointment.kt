@@ -10,12 +10,18 @@ import android.widget.*
 import com.example.PawSalon.R
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
+import com.example.PawSalon.network.BoardingAppointmentResponse
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
 import java.text.SimpleDateFormat
 import java.util.regex.Pattern
 import java.util.*
+import com.example.PawSalon.network.BoardingAppointmentRequest
+import com.example.PawSalon.view_models.RetrofitInstance
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class PetBoardingAppointment : AppCompatActivity() {
@@ -289,26 +295,35 @@ class PetBoardingAppointment : AppCompatActivity() {
         val time = etTime.text.toString().trim()
         val additionalDetails = etAdditionalDetails.text.toString().trim()
 
-        // Validate inputs
         if (validateInputs(firstName, lastName, phone, email, address, furbabyName)) {
-            // Confirm booking (API call or database logic can be added here)
+            val bookingRequest = BoardingAppointmentRequest(
+                firstName, lastName, phone, email, address, furbabyName, petType, optionType, date, time, additionalDetails
+            )
 
-            // Optionally pass data to the confirmation activity
-            val intent = Intent(this, PetBoardingConfirmationActivity::class.java).apply {
-                putExtra("FIRST_NAME", firstName)
-                putExtra("LAST_NAME", lastName)
-                putExtra("PHONE", phone)
-                putExtra("EMAIL", email)
-                putExtra("ADDRESS", address)
-                putExtra("PET_NAME", furbabyName)
-                putExtra("PET_TYPE", petType)
-                putExtra("OPTION_TYPE", optionType)
-                putExtra("DATE", date)
-                putExtra("TIME", time)
-                putExtra("ADDITIONAL_DETAILS", additionalDetails)
-            }
-            startActivity(intent)
-            finish() // Optionally finish the current activity
+            // Make API call
+            RetrofitInstance.api.bookAppointment(bookingRequest).enqueue(object : Callback<BoardingAppointmentResponse> {
+                override fun onResponse(call: Call<BoardingAppointmentResponse>, response: Response<BoardingAppointmentResponse>) {
+                    if (response.isSuccessful) {
+                        response.body()?.let { bookingResponse ->
+                            if (bookingResponse.success) {
+                                showToast("Booking confirmed: ${bookingResponse.message}")
+                                clearFields()  // Clear fields on successful booking
+                            } else {
+                                showToast("Failed to confirm booking: ${bookingResponse.message}")
+                            }
+                        } ?: run {
+                            showToast("Unexpected response format.")
+                        }
+                    } else {
+                        val errorMessage = response.errorBody()?.string() ?: "Unknown error occurred"
+                        showToast("Failed to confirm booking: $errorMessage")
+                    }
+                }
+
+                override fun onFailure(call: Call<BoardingAppointmentResponse>, t: Throwable) {
+                    showToast("Booking confirmation failed: ${t.message}")
+                }
+            })
         }
     }
 
