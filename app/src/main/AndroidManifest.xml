@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,105 +14,104 @@
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.PawSalon"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31">
+        tools:targetApi="31" >
 
         <activity
-            android:name="com.example.PawSalon.view.MainActivity"
-            android:exported="true">
+            android:name=".view.MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-
         <activity
-            android:name="com.example.PawSalon.view.WelcomeActivity"
-            android:exported="true" />
-
-        <activity
-            android:name="com.example.PawSalon.view.GroomingActivity"
-            android:exported="true" />
-
-        <activity
-            android:name="com.example.PawSalon.view.PetBoardingActivity"
-            android:exported="true" />
-
-        <activity
-            android:name="com.example.PawSalon.view.PetSuppliesActivity"
-            android:exported="true" />
-
-        <activity android:name="com.example.PawSalon.view.PetSuppliesCatergorizedActivity"
-            android:exported="true"/>
-
-        <activity
-            android:name="com.example.PawSalon.view.BasicVetServicesActivity"
-            android:exported="true" />
-
-        <activity
-            android:name="com.example.PawSalon.view.AppointmentActivity"
-            android:exported="true"/>
-        <activity
-            android:name="com.example.PawSalon.view.NotificationsActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.ProfileActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.SettingsActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.Feedback_Activity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.CatFoodActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.DogFoodActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.DogLeashActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.PetBowlActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.PetCareProductActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.PetCologneActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.PetLitterActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.PetPadsActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.PetShampooActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.PetToysActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.CutStylesActivity"
-            android:exported="true"/>
-        <activity android:name="com.example.PawSalon.view.PasswordSecActivity"
-            android:exported="true"/>
-
-        <activity
-            android:name="com.example.PawSalon.view.EditPetProfile"
+            android:name=".view.PetBoardingConfirmationActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.PawSalon.view.LoginSignupActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.example.PawSalon.view.LoginActivity"
-            android:exported="true" />
-        <activity
-            android:name="com.example.PawSalon.view.SignUpActivity"
-            android:exported="true" />
-        <activity
-            android:name="com.example.PawSalon.view.ForgotPasswordActivity"
-            android:exported="true" />
-        <activity
-            android:name="com.example.PawSalon.view.NewPasswordActivity"
-            android:exported="true" />
-        <activity
-            android:name="com.example.PawSalon.view.EditUserProfileActivity"
+            android:name=".view.ServiceConfirmationActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".view.AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.PetBoardingAppointment"
+            android:exported="false" />
+        <activity
+            android:name=".view.HomeScreenActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.GroomingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.PetBoardingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.PetSuppliesCatergorizedActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.BasicVetServicesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.ServiceAppointmentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.SettingsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.FeedbackActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.CatFoodActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.DogFoodActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.DogLeashActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.PetBowlActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.PetCareProductActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.PetCologneActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.PetLitterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.PetPadsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.PetShampooActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.PetToysActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.CutStylesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.PasswordSecActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.LoginSignupActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.SignUpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.ForgotPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.NewPasswordActivity"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

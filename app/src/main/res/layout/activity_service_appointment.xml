@@ -1,0 +1,564 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:padding="16dp"
+    tools:context=".view.ServiceAppointmentActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="Service Appointment"
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="780dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        tools:layout_editor_absoluteX="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Please fill out to make an appointment"
+                android:textAlignment="center"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="55dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Client Name:"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etFirstName"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="200dp"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/appointment"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:hint="First Name"
+                android:inputType="textPersonName"
+                android:maxLength="25"
+                android:padding="10sp"
+                android:textColorHint="@color/Gray"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/etLastName"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/appointment"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:hint="Last Name"
+                android:inputType="textPersonName"
+                android:maxLength="25"
+                android:padding="10sp"
+                android:textColorHint="@color/Gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="130dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Phone:"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="156dp"
+                android:layout_marginEnd="200dp"
+                android:background="@drawable/appointment"
+                android:hint="09*********"
+                android:textColorHint="@color/Gray"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:padding="10sp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Email:"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="225dp"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/black"
+                android:background="@drawable/appointment"
+                android:fontFamily="@font/poppins"
+                android:hint="juandelacruz@gmail.com"
+                android:inputType="textPersonName"
+                android:maxLength="50"
+                android:padding="10sp"
+                android:textColorHint="@color/Gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="270dp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginStart="20dp"
+                android:text="Address: "
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="100"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/black"
+                android:hint="# Barangay, Municipality, Province"
+                android:textColorHint="@color/Gray"
+                android:fontFamily="@font/poppins"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:inputType="textPersonName"
+                android:background="@drawable/appointment"
+                android:layout_marginTop="295dp" />
+
+            <TextView
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="340dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Your furbaby's name:"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etfurbabyname"
+                android:layout_width="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:maxLength="25"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:hint="(Furbaby's Name)"
+                android:fontFamily="@font/poppins"
+                android:textColorHint="@color/Gray"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:inputType="textPersonName"
+                android:background="@drawable/appointment"
+                android:layout_marginTop="365dp" />
+
+            <!--Pet dog cat -->
+            <RadioGroup
+                android:id="@+id/radioGroupPets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="410dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioDog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dog"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:buttonTint="@color/mama_mo_blue_darker" />
+
+                <RadioButton
+                    android:id="@+id/radioCat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mama_mo_blue_darker"
+                    android:layout_marginStart="40dp"
+                    android:text="Cat"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RadioGroup>
+
+            <!--Day-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="460dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="What day do you prefer for the appointment?"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etDate"
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="490dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/black"
+                android:background="@drawable/appointment"
+                android:focusable="false"
+                android:clickable="true"
+                android:textColorHint="@color/Gray"
+                android:hint="MM/DD/YY"
+                android:fontFamily="@font/poppins"
+                android:inputType="textPersonName"
+                android:padding="10sp"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/dateDropdown"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignTop="@+id/etDate"
+                android:layout_alignBottom="@+id/etDate"
+                android:layout_marginStart="280dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="9dp"
+                android:clickable="true"
+                android:contentDescription="Dropdown Arrow"
+                android:focusable="true"
+                android:src="@drawable/sortdown" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- CalendarView, initially hidden -->
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+            </FrameLayout>
+            <!--Time-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="545dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="What time do you prefer for the appointment?"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/ettime"
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_marginStart="20dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/Gray"
+                android:hint="Select Time"
+                android:fontFamily="@font/poppins"
+                android:inputType="textPersonName"
+                android:background="@drawable/appointment"
+                android:layout_marginTop="575dp"
+                android:focusable="false" />
+
+            <ImageView
+                android:id="@+id/timeDropdown"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignTop="@+id/ettime"
+                android:layout_alignBottom="@+id/ettime"
+                android:layout_marginStart="280dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="9dp"
+                android:clickable="true"
+                android:contentDescription="Dropdown Arrow"
+                android:focusable="true"
+                android:src="@drawable/sortdown" />
+
+            <!--service-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="630dp"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Which service do you choose this time?"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etservice"
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:hint="Choose Specific Service"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:layout_marginStart="20dp"
+                android:textSize="14sp"
+                android:inputType="textPersonName"
+                android:background="@drawable/appointment"
+                android:layout_marginTop="660dp"
+                android:focusable="false" />
+
+            <ImageView
+                android:id="@+id/serviceDropdown"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignTop="@+id/etservice"
+                android:layout_alignBottom="@+id/etservice"
+                android:layout_marginStart="280dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="9dp"
+                android:clickable="true"
+                android:contentDescription="Dropdown Arrow"
+                android:focusable="true"
+                android:src="@drawable/sortdown" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="710dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Choosen Services:"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etSelectedService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:inputType="textPersonName"
+                android:background="@drawable/appointment"
+                android:layout_marginTop="735dp"
+                android:focusable="false" />
+
+            <TextView
+                android:layout_width="327dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="785dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Please specify any additional details we should be aware of:"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etservices5"
+                android:layout_width="match_parent"
+                android:maxLength="255"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="830dp"
+                android:background="@drawable/appointment"
+                android:inputType="textMultiLine"
+                android:hint="N/A if none"
+                android:fontFamily="@font/poppins_light_italic"
+                android:textColorHint="@color/Gray"
+                android:textColor="@color/black"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:minLines="5"
+                android:maxLines="8"
+                android:justificationMode="inter_word"
+                android:gravity="top|start" />
+
+            <EditText
+                android:id="@+id/etservice6"
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:padding="12sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins"
+                android:layout_marginStart="15dp"
+                android:inputType="textPersonName"
+                android:background="@color/transparent"
+                android:layout_marginTop="950dp"
+                android:focusable="false" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="960dp"
+                android:layout_marginBottom="40dp">
+
+                <ImageButton
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/x"
+                    android:scaleType="fitStart"
+                    android:contentDescription="Cancel Appointment"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_confirm"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/btn_confirm"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/ok"
+                    android:scaleType="fitStart"
+                    android:contentDescription="Confirm Appointment"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btn_cancel" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation Buttons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- First ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Home"
+            android:src="@drawable/homeicon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_appointment"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Second ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_appointment"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Appointment"
+            android:src="@drawable/plusicon"
+            app:layout_constraintStart_toEndOf="@id/btn_home"
+            app:layout_constraintEnd_toStartOf="@id/btn_feedback"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Third ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_feedback"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Feedback"
+            android:src="@drawable/pawicon"
+            app:layout_constraintStart_toEndOf="@id/btn_appointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

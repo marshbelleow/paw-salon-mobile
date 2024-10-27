@@ -1,95 +1,75 @@
-package com.example.PawSalon.network
+    package com.example.PawSalon.network
 
-import com.example.PawSalon.model.Appointment
-import com.example.PawSalon.model.UserProfile
-import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.DELETE
-import retrofit2.http.GET
-import retrofit2.http.PUT
-import retrofit2.http.Path
-import retrofit2.http.POST
+    import com.example.PawSalon.model.Feedback
+    import retrofit2.Response
+    import retrofit2.Call
+    import retrofit2.http.Body
+    import retrofit2.http.DELETE
+    import retrofit2.http.GET
+    import retrofit2.http.PUT
+    import retrofit2.http.Path
+    import retrofit2.http.POST
 
-// Data model for login request
-data class LoginRequest(
-    val username: String,
-    val password: String
-)
+    // Retrofit interface for API calls
+    interface ApiService {
 
-// Data model for login response
-data class LoginResponse(
-    val token: String?,
-    val message: String?
-)
+        // Login API call
+        @POST("login")
+        fun login(@Body request: LoginRequest): Call<LoginResponse>
 
-// Data model for signup request
-data class SignUpRequest(
-    val fullname: String,
-    val username: String,
-    val email: String,
-    val password: String
-)
+        // Register API call
+        @POST("register")
+        fun signup(@Body request: SignUpRequest): Call<SignUpResponse>
 
-// Data model for signup response
-data class SignUpResponse(
-    val success: Boolean,
-    val message: String
-)
+        // Forgot password API call
+        @POST("forgot-password")
+        fun forgotPassword(@Body request: ForgotPasswordRequest): Call<ForgotPasswordResponse>
 
-// Data model for forgot password request
-data class ForgotPasswordRequest(
-    val identifier: String
-)
+        // Service Appointment APIs
+        // Create a new service appointment
+        @POST("service-appointments")
+        fun createServiceAppointment(@Body request: ServiceAppointmentRequest): Call<ServiceAppointmentResponse>
 
-// Data model for forgot password response
-data class ForgotPasswordResponse(
-    val success: Boolean,
-    val message: String,
-    val otpSent: Boolean
-)
+        // Get all service appointments
+        @GET("service-appointments")
+        fun getAllServiceAppointments(): Call<List<ServiceAppointmentResponse>>
 
-// Retrofit interface for API calls
-interface ApiService {
+        // Get a single service appointment by ID
+        @GET("service-appointments/{id}")
+        fun getServiceAppointmentById(@Path("id") id: Int): Call<ServiceAppointmentResponse>
 
-    // Login API call
-    @POST("login")
-    fun login(@Body request: LoginRequest): Call<LoginResponse>
+        // Update an existing service appointment
+        @PUT("service-appointments/{id}")
+        fun updateServiceAppointment(@Path("id") id: Int, @Body request: ServiceAppointmentRequest): Call<ServiceAppointmentResponse>
 
-    // Register API call
-    @POST("register")
-    fun signup(@Body signUpRequest: SignUpRequest): Call<SignUpResponse>
-
-    // Forgot password API call
-    @POST("forgot-password")
-    fun forgotPassword(@Body forgotPasswordRequest: ForgotPasswordRequest): Call<ForgotPasswordResponse>
-
-    // Get user profile by ID
-    @GET("user/{id}")
-    fun getUserProfile(@Path("id") userId: String): Call<UserProfile>
-
-    // Update user profile by ID
-    @PUT("user/{id}")
-    fun updateUserProfile(@Path("id") userId: String, @Body updatedProfile: UserProfile): Call<UserProfile>
+        // Delete a service appointment
+        @DELETE("service-appointments/{id}")
+        fun deleteServiceAppointment(@Path("id") id: Int): Call<Void>
 
 
 
-    // Create a new appointment
-    @POST("appointments")
-    fun createAppointment(@Body appointment: Appointment): Call<Appointment>
+        // Boarding Appointment APIs
+        // Create a new boarding appointment
+        @POST("boarding-appointments")
+        fun createBoardingAppointment(@Body request: BoardingAppointmentRequest): Call<BoardingAppointmentResponse>
 
-    // Get all appointments
-    @GET("appointments")
-    fun getAllAppointments(): Call<List<Appointment>>
+        // Get all boarding appointments
+        @GET("boarding-appointments")
+        fun getAllBoardingAppointments(): Call<List<BoardingAppointmentResponse>>
 
-    // Get a single appointment by ID
-    @GET("appointments/{id}")
-    fun getAppointmentById(@Path("id") id: Int): Call<Appointment>
+        // Get a single boarding appointment by ID
+        @GET("boarding-appointments/{id}")
+        fun getBoardingAppointmentById(@Path("id") id: Int): Call<BoardingAppointmentResponse>
 
-    // Update an existing appointment
-    @PUT("appointments/{id}")
-    fun updateAppointment(@Path("id") id: Int, @Body appointment: Appointment): Call<Appointment>
+        // Update an existing boarding appointment
+        @PUT("boarding-appointments/{id}")
+        fun updateBoardingAppointment(@Path("id") id: Int, @Body request: BoardingAppointmentRequest): Call<BoardingAppointmentResponse>
 
-    // Delete an appointment
-    @DELETE("appointments/{id}")
-    fun deleteAppointment(@Path("id") id: Int): Call<Void>
-}
+        // Delete a boarding appointment
+        @DELETE("boarding-appointments/{id}")
+        fun deleteBoardingAppointment(@Path("id") id: Int): Call<Void>
+
+        //FEEDBACK
+        @POST("feedback")
+        suspend fun submitFeedback(@Body feedback: Feedback): Response<Void>
+    }

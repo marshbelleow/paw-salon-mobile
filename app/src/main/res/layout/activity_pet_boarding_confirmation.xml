@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ServiceConfirmationActivity"
+    android:padding="16dp">
+
+    <!-- Confirmation message container -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/confirmation_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_container"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/lightgrey">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/confirmation_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This message is to confirm your upcoming appointment.\n\nPlease double-check that the information you provided is accurate, including your name, contact information, and the specific services you have booked.\n\nWe want to remind you that there is a 10% additional fee for booking online and another 10% fee for last-minute cancellations. We understand that things come up, but we ask that you respect our time and commitment by providing accurate information and adhering to the cancellation policy.\n\nWe take fraud seriously and will not hesitate to pursue legal action if necessary.\n\nThank you for your understanding and cooperation."
+                android:textSize="14sp"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:fontFamily="@font/poppins_semibold"
+                android:lineSpacingExtra="6dp"
+                android:justificationMode="inter_word" />
+
+            <TextView
+                android:id="@+id/footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:text="- Paw Salon"
+                android:textSize="14sp"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="16dp"
+                android:gravity="end" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Button container -->
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.865">
+
+        <!-- Cancel Button -->
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:backgroundTint="@color/soft_red"
+            android:fontFamily="@font/poppins"
+            android:padding="10dp"
+            android:text="Cancel"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:cornerRadius="16dp" />
+
+        <!-- Confirm Button -->
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/mama_mo_blue_darker"
+            android:fontFamily="@font/poppins"
+            android:padding="10dp"
+            android:text="Confirm"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:cornerRadius="16dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

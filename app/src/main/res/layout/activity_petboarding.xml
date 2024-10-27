@@ -1,4 +1,6 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,124 +8,185 @@
     android:padding="16dp">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageView5"
-            android:layout_width="244dp"
-            android:layout_height="131dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="480dp"
+            android:layout_width="227dp"
+            android:layout_height="126dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="490dp"
+            android:layout_marginEnd="80dp"
             android:scaleType="centerCrop"
             android:src="@drawable/noteboard">
 
         </com.google.android.material.imageview.ShapeableImageView>
 
-        <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="110dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Pet Boarding"
-        android:textColor="@color/mama_mo_blue_darker"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white">
+            <!-- Settings Button -->
+            <ImageButton
+                android:id="@+id/btn_settings"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="settings"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dots"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/btn_settings"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="310dp"
-        android:backgroundTint="@color/transparent"
-        android:contentDescription="settings"
-        android:scaleType="centerCrop"
-        android:src="@drawable/dots" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Pet Boarding"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/outerContainer2"
-            android:layout_width="330dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginTop="55dp"
             android:layout_marginBottom="16dp"
-            android:orientation="horizontal"
-            android:background="@drawable/photosbg"/>
+            android:background="@drawable/photosbg"
+            android:orientation="horizontal">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageView1"
                 android:layout_width="110dp"
                 android:layout_height="105dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="62dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/green"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.021"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.466"
                 app:shapeAppearanceOverlay="@style/roundimageview"
                 app:strokeColor="@color/mama_mo_blue_darker"
                 app:strokeWidth=".70dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/textDayCare"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="140dp"
-                android:layout_marginTop="70dp"
-                android:text="Day Care (Hourly)"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textDayCare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/outerContainer2"
+            android:layout_alignTop="@+id/outerContainer2"
+            android:layout_alignEnd="@+id/outerContainer2"
+            android:layout_alignBottom="@+id/textDayCarePrice"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="85dp"
+            android:layout_marginBottom="80dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Day Care (Hourly)"
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare1"
-                android:layout_width="180dp"
-                android:layout_height="42dp"
-                android:layout_marginStart="140dp"
-                android:layout_marginTop="95dp"
-                android:text="Give your pet a  chance to relax and have a good experience at the Pawsalon. "
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp" />
+        <TextView
+            android:id="@+id/textDayCare1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/outerContainer2"
+            android:layout_alignTop="@+id/outerContainer2"
+            android:layout_alignEnd="@+id/outerContainer2"
+            android:layout_alignBottom="@+id/outerContainer2"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="41dp"
+            android:fontFamily="@font/poppins"
+            android:text="Give your pet a chance to relax and have a good experience at the Pawsalon. "
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/textDayCarePrice"
-                android:layout_width="140dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="140dp"
-                android:layout_marginTop="140dp"
-                android:text="Php 30.00 "
-                android:textStyle="bold"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp" />
-
-        <LinearLayout
-            android:id="@+id/outerContainer4"
-            android:layout_width="330dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="200dp"
+        <TextView
+            android:id="@+id/textDayCarePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/outerContainer2"
+            android:layout_alignTop="@+id/outerContainer2"
+            android:layout_alignEnd="@+id/outerContainer2"
+            android:layout_alignBottom="@+id/outerContainer2"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="95dp"
+            android:layout_marginEnd="136dp"
             android:layout_marginBottom="16dp"
-            android:orientation="horizontal"
-            android:background="@drawable/photosbg"/>
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Php 30.00 "
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView2"
-            android:layout_width="110dp"
-            android:layout_height="105dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="208dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/yellow"
-            app:shapeAppearanceOverlay="@style/roundimageview"
-            app:strokeColor="@color/mama_mo_blue_darker"
-            app:strokeWidth=".70dp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/outerContainer4"
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/photosbg"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView2"
+                android:layout_width="110dp"
+                android:layout_height="105dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/yellow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.026"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.466"
+                app:shapeAppearanceOverlay="@style/roundimageview"
+                app:strokeColor="@color/mama_mo_blue_darker"
+                app:strokeWidth=".70dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/textOvernight"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="135dp"
-            android:layout_marginTop="210dp"
+            android:layout_alignStart="@+id/outerContainer4"
+            android:layout_alignTop="@+id/outerContainer4"
+            android:layout_alignEnd="@+id/outerContainer4"
+            android:layout_alignBottom="@+id/textOvernight5"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="66dp"
+            android:fontFamily="@font/poppins_bold"
             android:text="Overnight or Longer Stay (Small-Medium)"
             android:textColor="@color/mama_mo_blue_darker"
             android:textSize="14sp"
@@ -131,11 +194,18 @@
 
         <TextView
             android:id="@+id/textOvernight2"
-            android:layout_width="180dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="250dp"
-            android:text="Give your pet a  chance to relax and have a good experience at the Pawsalon. "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/outerContainer4"
+            android:layout_alignTop="@+id/outerContainer4"
+            android:layout_alignEnd="@+id/outerContainer4"
+            android:layout_alignBottom="@+id/outerContainer4"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="43dp"
+            android:fontFamily="@font/poppins"
+            android:text="Snuggle up overnight in comfort for small and medium pets."
             android:textColor="@color/mama_mo_blue_darker"
             android:textSize="12sp" />
 
@@ -143,132 +213,178 @@
             android:id="@+id/textOvernight5"
             android:layout_width="140dp"
             android:layout_height="20dp"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="298dp"
+            android:layout_alignStart="@+id/outerContainer4"
+            android:layout_alignTop="@+id/outerContainer4"
+            android:layout_alignEnd="@+id/outerContainer4"
+            android:layout_alignBottom="@+id/outerContainer4"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="69dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/poppins_semibold"
             android:text="Php 300.00 "
-            android:textStyle="bold"
             android:textColor="@color/mama_mo_blue_darker"
-            android:textSize="12sp" />
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-        <LinearLayout
-            android:id="@+id/outerContainer5"
-            android:layout_width="330dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="350dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/outerContainer16"
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="345dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="16dp"
-            android:orientation="horizontal"
-            android:background="@drawable/photosbg">
+            android:background="@drawable/photosbg"
+            android:orientation="horizontal">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageView3"
                 android:layout_width="110dp"
                 android:layout_height="105dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="8dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/pink"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.021"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.466"
                 app:shapeAppearanceOverlay="@style/roundimageview"
                 app:strokeColor="@color/mama_mo_blue_darker"
                 app:strokeWidth=".70dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/textLarge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="13dp"
-                android:layout_marginTop="10dp"
-                android:text="Overnight or Longer Stay (Large-Extra Large)"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textOvernight7"
-                android:layout_width="180dp"
-                android:layout_height="42dp"
-                android:layout_marginStart="-185dp"
-                android:layout_marginTop="45dp"
-                android:text="Give your pet a  chance to relax and have a good experience at the Pawsalon. "
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textOvernight9"
-                android:layout_width="140dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="-180dp"
-                android:layout_marginTop="90dp"
-                android:text="Php 450.00 "
-                android:textStyle="bold"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:id="@+id/bottom_buttons"
+        <TextView
+            android:id="@+id/textOvernight6"
             android:layout_width="match_parent"
-            android:layout_height="43dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="-20dp"
-            android:layout_marginEnd="-20dp"
-            android:layout_marginBottom="-12dp"
-            android:gravity="center"
-            android:background="@color/white"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/outerContainer16"
+            android:layout_alignTop="@+id/outerContainer16"
+            android:layout_alignEnd="@+id/outerContainer16"
+            android:layout_alignBottom="@+id/outerContainer16"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="81dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Overnight or Longer Stay (Large-Extra Large)"
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/textOvernight7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/outerContainer16"
+            android:layout_alignTop="@+id/outerContainer16"
+            android:layout_alignEnd="@+id/outerContainer16"
+            android:layout_alignBottom="@+id/outerContainer16"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="43dp"
+            android:fontFamily="@font/poppins"
+            android:text="Room to roam overnight for large and extra-large pets."
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="12sp" />
 
-            <ImageButton
-                android:id="@+id/btn_home"
-                android:layout_width="48dp"
-                android:layout_height="43dp"
-                android:layout_marginEnd="12dp"
-                android:backgroundTint="@color/transparent"
-                android:contentDescription="Home"
-                android:scaleType="fitStart"
-                android:src="@drawable/homeicon" />
+        <TextView
+            android:id="@+id/textOvernight8"
+            android:layout_width="140dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="440dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Php 450.00 "
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-            <ImageButton
-                android:id="@+id/btn_feedback"
-                android:layout_width="48dp"
-                android:layout_height="43dp"
-                android:layout_marginEnd="12dp"
-                android:backgroundTint="@color/transparent"
-                android:contentDescription="Services"
-                android:scaleType="fitStart"
-                android:src="@drawable/pawicon" />
-
-            <ImageButton
-                android:id="@+id/btn_appointment"
-                android:layout_width="48dp"
-                android:layout_height="43dp"
-                android:layout_marginEnd="12dp"
-                android:backgroundTint="@color/transparent"
-                android:contentDescription="Appointments"
-                android:scaleType="fitStart"
-                android:src="@drawable/plusicon" />
-
-            <ImageButton
-                android:id="@+id/btn_notifications"
-                android:layout_width="48dp"
-                android:layout_height="43dp"
-                android:layout_marginEnd="12dp"
-                android:backgroundTint="@color/transparent"
-                android:contentDescription="Notifications"
-                android:scaleType="fitStart"
-                android:src="@drawable/notificationicon" />
-
-            <ImageButton
-                android:id="@+id/btn_profile"
-                android:layout_width="48dp"
-                android:layout_height="43dp"
-                android:layout_marginEnd="-4dp"
-                android:backgroundTint="@color/transparent"
-                android:contentDescription="Profile"
-                android:scaleType="fitStart"
-                android:src="@drawable/profileicon" />
-        </LinearLayout>
     </RelativeLayout>
-</RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_buttons"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout2"
+        tools:layout_editor_absoluteX="-28dp">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Bottom Navigation Buttons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- First ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Home"
+            android:src="@drawable/homeicon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_appointment"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Second ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_appointment"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Appointment"
+            android:src="@drawable/plusicon"
+            app:layout_constraintStart_toEndOf="@id/btn_home"
+            app:layout_constraintEnd_toStartOf="@id/btn_feedback"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Third ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_feedback"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Feedback"
+            android:src="@drawable/pawicon"
+            app:layout_constraintStart_toEndOf="@id/btn_appointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn_pet_boarding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/signup_rounded_button"
+        android:backgroundTint="@color/my_primary"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Book Now!"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintVertical_bias="0.856" />
+</androidx.constraintlayout.widget.ConstraintLayout>

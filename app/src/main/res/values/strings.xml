@@ -66,4 +66,8 @@
     <string name="edit_pet_name">Edit Pet Name</string>
     <string name="edit_pet_age">Edit Pet Age</string>
     <string name="pet_breed">Pet Breed</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="personaldetails">PersonalDetails</string>
+    <string name="aboutpawsalon">aboutpawsalon</string>
+    <string name="about_pawsalon">about_pawsalon</string>
 </resources>

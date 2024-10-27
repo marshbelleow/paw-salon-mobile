@@ -1,858 +1,1104 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/transparent"
+    android:background="@color/white"
     android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- Settings Button -->
+        <ImageButton
+            android:id="@+id/btn_settings"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="settings"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dots"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="Pet Shampoo"
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="890dp"
+        android:layout_height="780dp"
         android:fillViewport="true"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        tools:layout_editor_absoluteX="16dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/outerContainer5"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginBottom="16dp"
-                android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg"
+                android:orientation="horizontal">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView3"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="68dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/antibacteria"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="6dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/antibacteria"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="8dp" />
 
-            <TextView
-                android:id="@+id/textDayCare8"
-                android:layout_width="156dp"
-                android:layout_height="31dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="70dp"
-                android:text="Pampered Pooch Shampoo Anti Bacterial"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="62dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Pampered Pooch Shampoo Anti Bacterial"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="128dp"
+                    tools:layout_editor_absoluteY="9dp" />
 
-            <TextView
-                android:id="@+id/textDayCare9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="105dp"
-                android:text="260ML - PHP 184.00 "
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare9"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginEnd="34dp"
+                    android:layout_marginBottom="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="260ML - PHP 184.00"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/textDayCare10"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="125dp"
-                android:text="1L - PHP 707.00 "
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare10"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="70dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="1L - PHP 707.00"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
+            </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/outerContainer6"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="190dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginBottom="16dp"
-                android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg"
+                android:orientation="horizontal">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView4"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="198dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/antimange"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/antimange"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare12"
-                android:layout_width="152dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="200dp"
-                android:text="Pampered Pooch Shampoo Anti Mange"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="62dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Pampered Pooch Shampoo Anti Mange"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare13"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="235dp"
-                android:text="260ML - PHP 184.00 "
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare22"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginEnd="34dp"
+                    android:layout_marginBottom="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="260ML - PHP 184.00"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/textDayCare14"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="255dp"
-                android:text="1L - PHP 707.00 "
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp" />
-
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/outerContainer7"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="330dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="280dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginBottom="16dp"
-                android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg"
+                android:orientation="horizontal" >
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView5"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="338dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/antitickandflea"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/antitickandflea"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare15"
-                android:layout_width="151dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="340dp"
-                android:text="Pampered Pooch Shampoo Anti Tick and Flea"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare15"
+                    android:layout_width="214dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Pampered Pooch Shampoo Anti Tick and Flea"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare16"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="380dp"
-                android:text="260ML - PHP 184.00 "
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare40"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginEnd="34dp"
+                    android:layout_marginBottom="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="260ML - PHP 184.00"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/textDayCare17"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="400dp"
-                android:text="1L - PHP 707.00 "
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
-
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/outerContainer8"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="460dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="410dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginBottom="16dp"
-                android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg"
+                android:orientation="horizontal" >
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView6"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="468dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/sweetscent"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sweetscent"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare18"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="470dp"
-                android:text="Pampered Pooch Shampoo Sweet Scent"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare18"
+                    android:layout_width="214dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Pampered Pooch Shampoo Sweet Scent"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare19"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="510dp"
-                android:text="260ML - PHP 184.00 "
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare19"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginEnd="34dp"
+                    android:layout_marginBottom="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="260ML - PHP 184.00"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/textDayCare20"
-                android:layout_width="175dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="530dp"
-                android:text="1L - PHP 707.00 "
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
-
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/outerContainer9"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="590dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="540dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView7"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="597dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/puppy"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/puppy"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare21"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="600dp"
-                android:text="Pampered Pooch Shampoo Puppy"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare21"
+                    android:layout_width="214dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Pampered Pooch Shampoo Puppy"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare22"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="635dp"
-                android:text="260ML - PHP 184.00 "
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare20"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginEnd="34dp"
+                    android:layout_marginBottom="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="250ML - PHP 140.00"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/textDayCare23"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="655dp"
-                android:text="1L - PHP 707.00 "
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare23"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="70dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="1L - PHP 420.00"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
-            <LinearLayout
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/outerContainer10"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="720dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="670dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView8"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="728dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/shampooconditioner"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/shampooconditioner"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare24"
-                android:layout_width="156dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="730dp"
-                android:text="@string/play_pet_show_dog_shampoo_conditioner_anti_mange"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare24"
+                    android:layout_width="214dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Play Pets Shampoo &amp; Conditioner Anti Mange"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare25"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="765dp"
-                android:text="250ML - PHP 185.15"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare25"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginEnd="34dp"
+                    android:layout_marginBottom="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="250ML - PHP 185.15"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
-            <LinearLayout
+                <TextView
+                    android:id="@+id/textDayCare26"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="70dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="1L - PHP 420.00"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/outerContainer11"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="850dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="800dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView9"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="857dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/antitiques"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/antitiques"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare28"
-                android:layout_width="147dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="860dp"
-                android:text="@string/play_pets_shampoo_conditioner_anti_tiques"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare28"
+                    android:layout_width="214dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Anti-Tiques Shampoo &amp; Conditioner"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare45"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="900dp"
-                android:text="250ML - PHP 185.15"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare45"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginEnd="34dp"
+                    android:layout_marginBottom="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="250ML - PHP 185.15"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
+                <TextView
+                    android:id="@+id/textDayCare46"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="70dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="1L - PHP 420.00"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
+            </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/outerContainer12"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="980dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="930dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView10"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="990dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/longcoatblue"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/longcoatblue"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare29"
-                android:layout_width="148dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="992dp"
-                android:text="Play Pets Show Dog Shampoo - Long Coat"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare29"
+                    android:layout_width="214dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Play Pets Show Dog Shampoo - Long Coat"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare46"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1035dp"
-                android:text="250ML - PHP 185.15"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare50"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="250ML - PHP 185.15"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
-            <LinearLayout
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/outerContainer15"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="1110dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="1060dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView11"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="1118dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/shortcoatgreen"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/shortcoatgreen"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare47"
-                android:layout_width="154dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1120dp"
-                android:text="Play Pets Dog Shampoo - Short Coat"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare47"
+                    android:layout_width="214dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Play Pets Dog Shampoo - Short Coat"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare49"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1165dp"
-                android:text="250ML - PHP 185.15"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare49"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="250ML - PHP 185.15"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
-            <LinearLayout
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:id="@+id/outerContainer16"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="1240dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="1190dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView12"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="1248dp"
-                android:src="@drawable/premuimwhiteningred"
-                android:scaleType="centerCrop"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/premuimwhiteningred"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare48"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1250dp"
-                android:text="Play Pets Show Dog Shampoo - Premium Whitening"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare48"
+                    android:layout_width="214dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Play Pets Show Dog Shampoo - Premium Whitening"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare51"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1305dp"
-                android:text="250ML - PHP 185.15"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare51"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="250ML - PHP 185.15"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
-            <LinearLayout
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/outerContainer17"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="1370dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="1320dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView19"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="1378dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/petsoap"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView19"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/petsoap"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare55"
-                android:layout_width="147dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1380dp"
-                android:text="Pampered Pooch Soap Anti Mange"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare55"
+                    android:layout_width="214dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Pampered Pooch Soap Anti Mange"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare60"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1430dp"
-                android:text="250ML - PHP 185.15"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare60"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="250ML - PHP 185.15"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
-            <LinearLayout
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/outerContainer18"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="1500dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="1450dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView22"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="1510dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/shampoosachet"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView22"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/shampoosachet"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare56"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1510dp"
-                android:text="@string/play_pets_shampoo_conditioner_anti_tiques"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare56"
+                    android:layout_width="214dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Play Pets Shampoo &amp; Conditioner Anti Ticks"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare61"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1550dp"
-                android:text="250ML - PHP 185.15"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare61"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="250ML - PHP 185.15"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
-            <LinearLayout
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/outerContainer19"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="1630dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="1580dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView23"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="1638dp"
-                android:src="@drawable/funky"
-                android:scaleType="centerCrop"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView23"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/funky"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare57"
-                android:layout_width="144dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1640dp"
-                android:text="Pampered Pooch Dry Shampoo Powder - Funky"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare57"
+                    android:layout_width="214dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Pampered Pooch Dry Shampoo Powder - Funky"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare63"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1690dp"
-                android:text="250ML - PHP 185.15"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare63"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="250ML - PHP 185.15"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
-            <LinearLayout
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:id="@+id/outerContainer21"
-                android:layout_width="298dp"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="1760dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="1710dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView26"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="1768dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/fresh"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView26"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/fresh"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare62"
-                android:layout_width="150dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1770dp"
-                android:text="Pampered Pooch Dry Shampoo Powder - Fresh"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare62"
+                    android:layout_width="214dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Pampered Pooch Dry Shampoo Powder - Fresh"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare64"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1820dp"
-                android:text="250ML - PHP 185.15"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare64"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="250ML - PHP 185.15"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
-            <LinearLayout
-                android:id="@+id/outerContainer23"
-                android:layout_width="298dp"
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/outerContainer24"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="1888dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="1840dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+                android:background="@drawable/photosbg">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView27"
-                android:layout_width="110dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="1895dp"
-                android:src="@drawable/fabulous"
-                android:scaleType="centerCrop"
-                app:shapeAppearanceOverlay="@style/roundimageview"
-                app:strokeColor="@color/mama_mo_blue_darker"
-                app:strokeWidth=".70dp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView27"
+                    android:layout_width="110dp"
+                    android:layout_height="105dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/fabulous"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
 
-            <TextView
-                android:id="@+id/textDayCare67"
-                android:layout_width="156dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1900dp"
-                android:text="Pampered Pooch Dry Shampoo Powder - Fabulous"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textDayCare67"
+                    android:layout_width="214dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Pampered Pooch Dry Shampoo Powder - Fabulous"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textDayCare68"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="1950dp"
-                android:text="250ML - PHP 185.15"
-                android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
+                <TextView
+                    android:id="@+id/textDayCare68"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="250ML - PHP 185.15"
+                    android:textColor="@color/mama_mo_blue_darker"
+                    android:textSize="14sp" />
 
-            <LinearLayout
-                android:id="@+id/outerContainer25"
-                android:layout_width="298dp"
-                android:layout_height="120dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="2015dp"
-                android:layout_marginBottom="16dp"
-                android:orientation="horizontal"
-                android:background="@drawable/photosbg"/>
+            </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/outerContainer23"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="1840dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            android:background="@drawable/photosbg">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageView30"
                 android:layout_width="110dp"
                 android:layout_height="105dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="2023dp"
-                android:src="@drawable/fatcatshampoo"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="7dp"
                 android:scaleType="centerCrop"
+                android:src="@drawable/fabulous"
                 app:shapeAppearanceOverlay="@style/roundimageview"
                 app:strokeColor="@color/mama_mo_blue_darker"
                 app:strokeWidth=".70dp" />
 
             <TextView
-                android:id="@+id/textDayCare70"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="2030dp"
-                android:text="Fat Cat Shampoo"
+                android:id="@+id/textDayCare69"
+                android:layout_width="214dp"
+                android:layout_height="64dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="125dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="44dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Pampered Pooch Dry Shampoo Powder - Fabulous"
                 android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textDayCare72"
+                android:id="@+id/textDayCare70"
                 android:layout_width="180dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="2060dp"
+                android:layout_marginStart="135dp"
+                android:layout_marginTop="70dp"
+                android:fontFamily="@font/poppins"
                 android:text="250ML - PHP 185.15"
                 android:textColor="@color/mama_mo_blue_darker"
-                android:textSize="11sp" />
-
-            <LinearLayout
-                android:id="@+id/outerContainer24"
-                android:layout_width="330dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="2130dp"
-                android:layout_marginBottom="16dp"
-                android:orientation="horizontal"
-                android:background="@color/transparent"/>
+                android:textSize="14sp" />
+            </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
 
-    <ImageButton
-        android:id="@+id/btn_settings"
-        android:layout_width="40dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="310dp"
-        android:layout_marginTop="-6dp"
-        android:backgroundTint="@color/white"
-        android:contentDescription="settings"
-        android:scaleType="centerCrop"
-        android:src="@drawable/dots" />
-
-    <TextView
-        android:layout_width="299dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="14dp"
-        android:background="@color/white"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Pet Shampoo"
-        android:textAlignment="center"
-        android:textColor="@color/mama_mo_blue_darker"
-        android:textSize="22sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
+    <!-- Bottom Navigation Buttons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom_buttons"
         android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-20dp"
-        android:layout_marginEnd="-20dp"
-        android:layout_marginBottom="-12dp"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:background="@color/white"
-        android:orientation="horizontal">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-
+        <!-- First ImageButton -->
         <ImageButton
             android:id="@+id/btn_home"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="12dp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/transparent"
             android:contentDescription="Home"
-            android:scaleType="fitStart"
-            android:src="@drawable/homeicon" />
+            android:src="@drawable/homeicon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_appointment"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
 
-        <ImageButton
-            android:id="@+id/btn_feedback"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="12dp"
-            android:backgroundTint="@color/transparent"
-            android:contentDescription="Services"
-            android:scaleType="fitStart"
-            android:src="@drawable/pawicon" />
-
+        <!-- Second ImageButton -->
         <ImageButton
             android:id="@+id/btn_appointment"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="12dp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/transparent"
-            android:contentDescription="Appointments"
-            android:scaleType="fitStart"
-            android:src="@drawable/plusicon" />
+            android:contentDescription="Appointment"
+            android:src="@drawable/plusicon"
+            app:layout_constraintStart_toEndOf="@id/btn_home"
+            app:layout_constraintEnd_toStartOf="@id/btn_feedback"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
 
+        <!-- Third ImageButton -->
         <ImageButton
-            android:id="@+id/btn_notifications"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="12dp"
+            android:id="@+id/btn_feedback"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/transparent"
-            android:contentDescription="Notifications"
-            android:scaleType="fitStart"
-            android:src="@drawable/notificationicon" />
-
-        <ImageButton
-            android:id="@+id/btn_profile"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="-4dp"
-            android:backgroundTint="@color/transparent"
-            android:contentDescription="Profile"
-            android:scaleType="fitStart"
-            android:src="@drawable/profileicon" />
-    </LinearLayout>
-</RelativeLayout>
+            android:contentDescription="Feedback"
+            android:src="@drawable/pawicon"
+            app:layout_constraintStart_toEndOf="@id/btn_appointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

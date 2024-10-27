@@ -1,5 +1,6 @@
 package com.example.PawSalon.view
 
+import com.example.PawSalon.model.Feedback
 import com.example.PawSalon.network.ForgotPasswordRequest
 import com.example.PawSalon.network.ForgotPasswordResponse
 import com.example.PawSalon.network.LoginRequest
@@ -19,4 +20,5 @@ interface ApiService {
 
     @POST("clients/forgot-password")
     fun forgotPassword(@Body forgotPasswordRequest: ForgotPasswordRequest): Call<ForgotPasswordResponse>
+    suspend fun submitFeedback(feedback: Feedback): Any
 }

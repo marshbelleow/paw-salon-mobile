@@ -1,0 +1,266 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <!-- Settings Button -->
+    <ImageButton
+        android:id="@+id/btn_settings"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="settings"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dots"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:src="@drawable/pawsalonlogowithpaw"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/btn_settings"
+        app:layout_constraintBottom_toTopOf="@id/bottom_buttons">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/your_constraint_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                tools:ignore="MissingConstraints">
+
+                <!-- First Button in the First Row -->
+                <Button
+                    android:id="@+id/buttonGrooming"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/backgroundbutton"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Grooming"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/btnPetBoarding"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- Second Button in the First Row -->
+                <Button
+                    android:id="@+id/btnPetBoarding"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/backgroundbutton"
+                    android:text="Pet Boarding"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/buttonGrooming"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- First Button in the Second Row -->
+                <Button
+                    android:id="@+id/btnPetSupplies"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/backgroundbutton"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Pet Supplies"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/btnVetService"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/buttonGrooming" />
+
+                <!-- Second Button in the Second Row -->
+                <Button
+                    android:id="@+id/btnVetService"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/backgroundbutton"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Basic Vet Services"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btnPetSupplies"
+                    app:layout_constraintTop_toBottomOf="@id/btnPetBoarding" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/galleryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="160dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Happy Pets Gallery"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/gallery1"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:src="@drawable/gallery1"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/galleryTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:contentDescription="Gallery Image"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:id="@+id/gallery2"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:src="@drawable/gallery2"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/gallery1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:contentDescription="Gallery Image"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:id="@+id/gallery3"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:src="@drawable/gallery3"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/gallery2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:contentDescription="Gallery Image"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:id="@+id/gallery4"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:src="@drawable/gallery4"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/gallery3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:contentDescription="Gallery Image"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:id="@+id/gallery5"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:src="@drawable/gallery5"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/gallery4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:contentDescription="Gallery Image"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:id="@+id/gallery6"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:src="@drawable/gallery6"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintTop_toBottomOf="@id/gallery5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:contentDescription="Gallery Image"
+                android:scaleType="centerCrop"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation Buttons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- First ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Home"
+            android:src="@drawable/homeicon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_appointment"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Second ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_appointment"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Appointment"
+            android:src="@drawable/plusicon"
+            app:layout_constraintStart_toEndOf="@id/btn_home"
+            app:layout_constraintEnd_toStartOf="@id/btn_feedback"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Third ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_feedback"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Feedback"
+            android:src="@drawable/pawicon"
+            app:layout_constraintStart_toEndOf="@id/btn_appointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

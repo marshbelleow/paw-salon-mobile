@@ -25,4 +25,7 @@
     <color name="dark_teal_blue">#215D6E</color>
     <color name="transparentColor">#00FFFFFF</color>
     <color name="mamamobluedark">#5E98AA</color>
+    <color name="soft_red">#FF6F61</color>
+    <color name="bottom_nav_active">#5E98AA</color>
+    <color name="bottom_nav_inactive">#A1A1A1</color>
 </resources>

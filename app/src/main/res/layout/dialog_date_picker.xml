@@ -1,4 +1,3 @@
-<!-- dialog_date_picker.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,15 +7,21 @@
     <Spinner
         android:id="@+id/month_spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp"
+        android:fontFamily="@font/poppins"
+        android:popupBackground="@android:color/white" />
 
     <Spinner
         android:id="@+id/day_spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp"
+        android:fontFamily="@font/poppins"
+        android:popupBackground="@android:color/white" />
 
     <Spinner
         android:id="@+id/year_spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp"
+        android:fontFamily="@font/poppins"
+        android:popupBackground="@android:color/white" />
 </LinearLayout>

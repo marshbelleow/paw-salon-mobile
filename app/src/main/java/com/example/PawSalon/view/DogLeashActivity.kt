@@ -17,15 +17,7 @@ class DogLeashActivity : AppCompatActivity() {
         val appointmentImageButton: ImageButton = findViewById(R.id.btn_appointment)
         appointmentImageButton.setOnClickListener {
             // Navigate directly to AppointmentActivity
-            val intent = Intent(this, AppointmentActivity::class.java)
-            startActivity(intent)
-        }
-
-        // Profile button navigation
-        val profileImageButton: ImageButton = findViewById(R.id.btn_profile)
-        profileImageButton.setOnClickListener {
-            // Navigate directly to ProfileActivity
-            val intent = Intent(this, ProfileActivity::class.java)
+            val intent = Intent(this, ServiceAppointmentActivity::class.java)
             startActivity(intent)
         }
 
@@ -40,7 +32,7 @@ class DogLeashActivity : AppCompatActivity() {
         // Home button navigation
         val homeButton: ImageButton = findViewById(R.id.btn_home)
         homeButton.setOnClickListener {
-            val intent = Intent(this, WelcomeActivity::class.java)
+            val intent = Intent(this, HomeScreenActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
             startActivity(intent)
         }

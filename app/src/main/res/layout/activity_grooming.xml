@@ -1,29 +1,106 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:padding="16dp">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- Settings Button -->
+        <ImageButton
+            android:id="@+id/btn_settings"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="settings"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dots"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="Grooming"
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="890dp"
+        android:layout_height="780dp"
         android:fillViewport="true"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        tools:layout_editor_absoluteX="16dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Size Classification and Pricing"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/mama_mo_blue_darker"/>
+
+            <LinearLayout
+                android:id="@+id/outerContainer69"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="-2dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/dog_note"
+                android:orientation="vertical"
+                android:padding="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/outerContainer70"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/cat_note"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+            </LinearLayout>
+
+
             <LinearLayout
                 android:id="@+id/outerContainer1"
                 android:layout_width="135dp"
                 android:layout_height="165dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="250dp"
                 android:layout_marginBottom="16dp"
-
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -45,9 +122,10 @@
                     android:id="@+id/textBathBlowDry1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="23dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="4dp"
                     android:text="Bath &amp; Blow Dry"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -56,7 +134,8 @@
                     android:id="@+id/textBathBlowDryPrice1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins"
                     android:layout_marginTop="1dp"
                     android:text="P 200 | P 300 | P 400"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -69,9 +148,9 @@
                 android:id="@+id/outerContainer2"
                 android:layout_width="135dp"
                 android:layout_height="165dp"
-                android:layout_toRightOf="@id/outerContainer1"
-                android:layout_marginTop="55dp"
-                android:layout_marginStart="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="250dp"
+                android:layout_marginEnd="40dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -93,7 +172,7 @@
                     android:id="@+id/textBathBlowDry2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="33dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="4dp"
                     android:text="Nail Clipping"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -104,10 +183,10 @@
                     android:id="@+id/textBathBlowDryPrice2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="2dp"
-                    android:textColor="@color/mama_mo_blue_darker"
                     android:text="P 100 | P 1500"
+                    android:textColor="@color/mama_mo_blue_darker"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -117,8 +196,9 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer1"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginStart="20dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -140,7 +220,7 @@
                     android:id="@+id/textGroomingService"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="4dp"
                     android:text="Ear Cleaning"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -151,7 +231,7 @@
                     android:id="@+id/textGroomingPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="1dp"
                     android:text="Dog: P 150 | Cat: P 100"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -164,8 +244,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer1"
-                android:layout_marginTop="4dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -187,7 +269,7 @@
                     android:id="@+id/textFleaTreatment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="22dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="4dp"
                     android:text="Face Trimming"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -198,7 +280,7 @@
                     android:id="@+id/textFleaPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="2dp"
                     android:text="P 100 | P 150 | P 200"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -210,8 +292,9 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer3"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginStart="20dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -231,9 +314,9 @@
 
                 <TextView
                     android:id="@+id/textFifthService"
-                    android:layout_width="123dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="4dp"
                     android:text="Sanitary Shaving"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -244,7 +327,7 @@
                     android:id="@+id/textFifthPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="28dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="1dp"
                     android:text="P 100 | P 200"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -257,8 +340,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer3"
-                android:layout_marginTop="4dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -275,11 +360,12 @@
                     app:shapeAppearanceOverlay="@style/roundimageview"
                     app:strokeColor="@color/mama_mo_blue_darker"
                     app:strokeWidth=".70dp" />
+
                 <TextView
                     android:id="@+id/textSixthService"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="28dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="4dp"
                     android:text="Paw Trimming"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -290,19 +376,21 @@
                     android:id="@+id/textSixthPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="2dp"
                     android:text="P 100 | P 150 | P200"
                     android:textColor="@color/mama_mo_blue_darker"
                     android:textSize="10sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/outerContainer7"
                 android:layout_width="136dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer5"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginStart="20dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -324,7 +412,7 @@
                     android:id="@+id/textSeventhService"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="4dp"
                     android:text="Teeth Brushing"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -335,7 +423,7 @@
                     android:id="@+id/textSeventhPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="1dp"
                     android:text="P 150 | P 225"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -346,10 +434,12 @@
             <LinearLayout
                 android:id="@+id/outerContainer8"
                 android:layout_width="135dp"
-                android:layout_height="165dp"
+                android:layout_height="170dp"
                 android:layout_below="@id/outerContainer5"
-                android:layout_marginTop="4dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -370,7 +460,7 @@
                     android:id="@+id/textEighthService"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
+                    android:layout_gravity="center"
                     android:text="Cut &amp; Style"
                     android:textColor="@color/mama_mo_blue_darker"
                     android:textSize="11sp"
@@ -378,13 +468,12 @@
 
                 <Button
                     android:id="@+id/btn_SEEMORE"
-                    android:layout_width="78dp"
-                    android:layout_height="28dp"
-                    android:layout_marginLeft="22dp"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/petsuppliesbg"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="See More"
-                    android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textSize="8sp" />
             </LinearLayout>
@@ -395,8 +484,9 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer7"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginStart="20dp"
                 android:layout_marginBottom="50dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -418,7 +508,7 @@
                     android:id="@+id/textNinthService"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="4dp"
                     android:text="Basic Grooming"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -429,7 +519,7 @@
                     android:id="@+id/textNinthPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="1dp"
                     android:text="S:350 | M:450 | L:550"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -442,8 +532,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer7"
-                android:layout_marginTop="4dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:layout_marginBottom="50dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -465,7 +557,7 @@
                     android:id="@+id/textTenthService"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="28dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="4dp"
                     android:text="Full Grooming"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -476,7 +568,7 @@
                     android:id="@+id/textTenthPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="22dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="2dp"
                     android:text="S:500 | M:600 | L:700"
                     android:textColor="@color/mama_mo_blue_darker"
@@ -508,91 +600,56 @@
         </RelativeLayout>
     </ScrollView>
 
-
-    <ImageButton
-        android:id="@+id/btn_settings"
-        android:layout_width="34dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="310dp"
-        android:layout_marginTop="-6dp"
-        android:backgroundTint="@color/white"
-        android:contentDescription="settings"
-        android:scaleType="centerCrop"
-        android:src="@drawable/dots" />
-
-    <TextView
-        android:layout_width="299dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:background="@color/white"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Grooming"
-        android:textAlignment="center"
-        android:textColor="@color/mama_mo_blue_darker"
-        android:textSize="22sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
+    <!-- Bottom Navigation Buttons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom_buttons"
         android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-20dp"
-        android:layout_marginEnd="-20dp"
-        android:layout_marginBottom="-12dp"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:background="@color/white"
-        android:orientation="horizontal">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-
+        <!-- First ImageButton -->
         <ImageButton
             android:id="@+id/btn_home"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="12dp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/transparent"
             android:contentDescription="Home"
-            android:scaleType="fitStart"
-            android:src="@drawable/homeicon" />
+            android:src="@drawable/homeicon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_appointment"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
 
-        <ImageButton
-            android:id="@+id/btn_feedback"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="12dp"
-            android:backgroundTint="@color/transparent"
-            android:contentDescription="Services"
-            android:scaleType="fitStart"
-            android:src="@drawable/pawicon" />
-
+        <!-- Second ImageButton -->
         <ImageButton
             android:id="@+id/btn_appointment"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="12dp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/transparent"
-            android:contentDescription="Appointments"
-            android:scaleType="fitStart"
-            android:src="@drawable/plusicon" />
+            android:contentDescription="Appointment"
+            android:src="@drawable/plusicon"
+            app:layout_constraintStart_toEndOf="@id/btn_home"
+            app:layout_constraintEnd_toStartOf="@id/btn_feedback"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
 
+        <!-- Third ImageButton -->
         <ImageButton
-            android:id="@+id/btn_notifications"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="12dp"
+            android:id="@+id/btn_feedback"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/transparent"
-            android:contentDescription="Notifications"
-            android:scaleType="fitStart"
-            android:src="@drawable/notificationicon" />
-
-        <ImageButton
-            android:id="@+id/btn_profile"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="-4dp"
-            android:backgroundTint="@color/transparent"
-            android:contentDescription="Profile"
-            android:scaleType="fitStart"
-            android:src="@drawable/profileicon" />
-    </LinearLayout>
-</RelativeLayout>
+            android:contentDescription="Feedback"
+            android:src="@drawable/pawicon"
+            app:layout_constraintStart_toEndOf="@id/btn_appointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

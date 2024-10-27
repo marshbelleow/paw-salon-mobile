@@ -1,220 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textSettings"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Settings"
             android:textColor="@color/mama_mo_blue_darker"
             android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
 
-        <TextView
-            android:id="@+id/textpersonaldetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="96dp"
-            android:text="Personal Details"
-            android:textColor="@color/mama_mo_blue_darker"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/textpasswordsecurity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="144dp"
-            android:text="@string/password_security"
-            android:textColor="@color/mama_mo_blue_darker"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textpnotificationsonoff"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="194dp"
-            android:text="Notifications"
-            android:textColor="@color/mama_mo_blue_darker"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switch_notifications"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="290dp"
-            android:layout_marginTop="185dp"
-            app:layout_constraintTop_toBottomOf="@id/textpnotificationsonoff"
-            app:layout_constraintStart_toEndOf="@id/textpnotificationsonoff" />
-
-
-        <TextView
-            android:id="@+id/text_notification_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="210dp"
-            android:text="Off"
-            android:textColor="@color/mama_mo_blue_darker"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@id/switch_notifications"
-            app:layout_constraintTop_toBottomOf="@id/textpnotificationsonoff" />
-
-        <TextView
-            android:id="@+id/textaboutpawsalon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="246dp"
-            android:text="About Paw Salon"
-            android:textColor="@color/mama_mo_blue_darker"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textlogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="296dp"
-            android:text="Log out"
-            android:textColor="@color/mama_mo_blue_darker"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/btn_personaldetails"
-            android:layout_width="55dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/transparent"
-            android:contentDescription="PersonalDetails"
-            android:scaleType="centerCrop"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="80dp"
-            android:src="@drawable/user" />
-
-        <ImageButton
-            android:id="@+id/btn_passwordsecurity"
-            android:layout_width="55dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/transparent"
-            android:contentDescription="passwordsecurity"
-            android:scaleType="centerCrop"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="130dp"
-            android:src="@drawable/passwordsecurity" />
-
-        <ImageButton
-            android:id="@+id/btn_notificationonoff"
-            android:layout_width="55dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/transparent"
-            android:contentDescription="notificationsonoff"
-            android:scaleType="centerCrop"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="180dp"
-            android:src="@drawable/notificationsonoff" />
-
-        <ImageButton
-            android:id="@+id/aboutpawsalon"
-            android:layout_width="55dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/transparent"
-            android:contentDescription="aboutpawsalon"
-            android:scaleType="centerCrop"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="230dp"
-            android:src="@drawable/aboutus" />
-
-        <ImageButton
-            android:id="@+id/logout"
-            android:layout_width="55dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/transparent"
-            android:contentDescription="logout"
-            android:scaleType="centerCrop"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="280dp"
-            android:src="@drawable/logout" />
-
-        <LinearLayout
-            android:id="@+id/bottom_buttons"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="43dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="-20dp"
-            android:layout_marginEnd="-20dp"
-            android:gravity="center"
-            android:background="@color/white"
-            android:orientation="horizontal">
-
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
             <ImageButton
-                android:id="@+id/btn_home"
-                android:layout_width="48dp"
-                android:layout_height="43dp"
-                android:layout_marginEnd="12dp"
+                android:id="@+id/btn_password_security"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="16dp"
                 android:backgroundTint="@color/transparent"
-                android:contentDescription="Home"
-                android:scaleType="fitStart"
-                android:src="@drawable/homeicon" />
+                android:contentDescription="@string/password_security"
+                android:scaleType="centerCrop"
+                android:src="@drawable/passwordsecurity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/about_pawsalon"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/text_password_security"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/password_security"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_password_security"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="NotSibling" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
             <ImageButton
-                android:id="@+id/btn_feedback"
-                android:layout_width="48dp"
-                android:layout_height="43dp"
-                android:layout_marginEnd="12dp"
+                android:id="@+id/about_pawsalon"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="16dp"
                 android:backgroundTint="@color/transparent"
-                android:contentDescription="Feedback"
-                android:scaleType="fitStart"
-                android:src="@drawable/pawicon" />
+                android:contentDescription="@string/aboutpawsalon"
+                android:scaleType="centerCrop"
+                android:src="@drawable/aboutus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_password_security"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/text_about_pawsalon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="About Paw Salon"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/about_pawsalon"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="NotSibling" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginEnd="30dp">
 
             <ImageButton
-                android:id="@+id/btn_appointment"
-                android:layout_width="48dp"
-                android:layout_height="43dp"
-                android:layout_marginEnd="12dp"
+                android:id="@+id/logout"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="280dp"
+                android:layout_marginEnd="16dp"
                 android:backgroundTint="@color/transparent"
-                android:contentDescription="Appointments"
-                android:scaleType="fitStart"
-                android:src="@drawable/plusicon" />
+                android:contentDescription="logout"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logout"
+                app:layout_constraintStart_toStartOf="@id/text_about_pawsalon"
+                app:layout_constraintTop_toBottomOf="@id/about_pawsalon"
+                tools:ignore="NotSibling" />
 
-            <ImageButton
-                android:id="@+id/btn_notifications"
-                android:layout_width="48dp"
-                android:layout_height="43dp"
-                android:layout_marginEnd="12dp"
-                android:backgroundTint="@color/transparent"
-                android:contentDescription="Notifications"
-                android:scaleType="fitStart"
-                android:src="@drawable/notificationicon" />
+            <TextView
+                android:id="@+id/textlogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Log out"
+                android:textColor="@color/mama_mo_blue_darker"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/logout"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/btn_profile"
-                android:layout_width="48dp"
-                android:layout_height="43dp"
-                android:layout_marginEnd="-4dp"
-                android:backgroundTint="@color/transparent"
-                android:contentDescription="Profile"
-                android:scaleType="fitStart"
-                android:src="@drawable/profileicon" />
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </RelativeLayout>
+    <!-- Bottom Navigation Buttons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- First ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Home"
+            android:src="@drawable/homeicon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_appointment"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Second ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_appointment"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Appointment"
+            android:src="@drawable/plusicon"
+            app:layout_constraintStart_toEndOf="@id/btn_home"
+            app:layout_constraintEnd_toStartOf="@id/btn_feedback"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Third ImageButton -->
+        <ImageButton
+            android:id="@+id/btn_feedback"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="Feedback"
+            android:src="@drawable/pawicon"
+            app:layout_constraintStart_toEndOf="@id/btn_appointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

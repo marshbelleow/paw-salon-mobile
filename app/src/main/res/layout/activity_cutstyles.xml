@@ -1,29 +1,104 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:padding="16dp">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- Settings Button -->
+        <ImageButton
+            android:id="@+id/btn_settings"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="settings"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dots"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="Cut and Styles"
+            android:textColor="@color/mama_mo_blue_darker"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="890dp"
+        android:layout_height="780dp"
         android:fillViewport="true"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        tools:layout_editor_absoluteX="16dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Size Classification and Pricing"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/mama_mo_blue_darker"/>
+
+            <LinearLayout
+                android:id="@+id/outerContainer69"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="-2dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/dog_note"
+                android:orientation="vertical"
+                android:padding="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/outerContainer70"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/cat_note"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+            </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/outerContainer1"
                 android:layout_width="135dp"
                 android:layout_height="165dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="110dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="250dp"
                 android:layout_marginBottom="16dp"
-
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -43,14 +118,14 @@
 
                 <TextView
                     android:id="@+id/textBathBlowDry1"
-                    android:layout_width="135dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_height="21dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="Yorkie Teddy Bear"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp"/>
 
             </LinearLayout>
 
@@ -59,9 +134,9 @@
                 android:id="@+id/outerContainer2"
                 android:layout_width="135dp"
                 android:layout_height="165dp"
-                android:layout_toRightOf="@id/outerContainer1"
-                android:layout_marginTop="110dp"
-                android:layout_marginStart="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="250dp"
+                android:layout_marginEnd="40dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -81,14 +156,14 @@
 
                 <TextView
                     android:id="@+id/textBathBlowDry2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:text="Panther Cut"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp"/>
 
             </LinearLayout>
 
@@ -98,8 +173,9 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer1"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginStart="20dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -119,14 +195,14 @@
 
                 <TextView
                     android:id="@+id/textGroomingService"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:text="Yorkie Breed Trim"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp"/>
 
             </LinearLayout>
 
@@ -136,8 +212,9 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer1"
+                android:layout_alignParentEnd="true"
                 android:layout_marginTop="4dp"
-                android:layout_marginStart="175dp"
+                android:layout_marginEnd="40dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -157,14 +234,14 @@
 
                 <TextView
                     android:id="@+id/textFleaTreatment"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
                     android:layout_marginTop="4dp"
                     android:text="The Line Cut - Norwegian Forest "
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textAlignment="center"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -172,8 +249,9 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer3"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginStart="20dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -193,14 +271,14 @@
 
                 <TextView
                     android:id="@+id/textFifthService"
-                    android:layout_width="123dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:text="Yorkie Kennel Cut"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -210,8 +288,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer3"
-                android:layout_marginTop="4dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -228,24 +308,26 @@
                     app:shapeAppearanceOverlay="@style/roundimageview"
                     app:strokeColor="@color/mama_mo_blue_darker"
                     app:strokeWidth=".70dp" />
+
                 <TextView
                     android:id="@+id/textSixthService"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
                     android:layout_marginTop="10dp"
                     android:text="Kitten Clip"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/outerContainer7"
                 android:layout_width="135dp"
                 android:layout_height="165dp"
-                android:layout_marginStart="20dp"
                 android:layout_below="@id/outerContainer5"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
@@ -266,14 +348,14 @@
 
                 <TextView
                     android:id="@+id/textSeventhService"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:text="Yorkie Show Groom"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp" />
 
 
             </LinearLayout>
@@ -284,8 +366,10 @@
                 android:layout_width="136dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer5"
-                android:layout_marginTop="4dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -303,14 +387,14 @@
 
                 <TextView
                     android:id="@+id/textEighthService"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
-                    android:text="Punk Cut"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
+                    android:text="Punk Cut"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp"/>
             </LinearLayout>
 
             <!-- Ninth Container -->
@@ -321,12 +405,10 @@
                 android:layout_below="@id/outerContainer7"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
-
-
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/imageView9"
@@ -342,14 +424,14 @@
 
                 <TextView
                     android:id="@+id/textNinthService"
-                    android:layout_width="135dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="Shih Tzu Show Groom"
-                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textAlignment="center"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp"/>
             </LinearLayout>
 
             <!-- Tenth Container -->
@@ -358,9 +440,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer7"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="16dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -379,11 +462,12 @@
 
                 <TextView
                     android:id="@+id/text12Service"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:text="Teddy Bear Cut"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -405,9 +489,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer9"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="16dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -426,14 +511,14 @@
 
                 <TextView
                     android:id="@+id/textTenthService"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:text="Comb Cut"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -441,8 +526,8 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer10"
-                android:layout_marginTop="4dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
@@ -462,14 +547,14 @@
 
                 <TextView
                     android:id="@+id/textTwelfthService"
-                    android:layout_width="123dp"
+                    android:layout_width="match_parent"
                     android:textAlignment="center"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="Shih Tzu Teddy Bear"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="11sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -479,7 +564,7 @@
                 android:layout_below="@id/outerContainer12"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -498,13 +583,14 @@
 
                 <TextView
                     android:id="@+id/tex13Service"
-                    android:layout_width="135dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
-                    android:layout_marginStart="8dp"
                     android:text="Shih Tzu Kennel Cut"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
+                    android:textSize="11sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -514,9 +600,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer11"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="16dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -535,14 +622,14 @@
 
                 <TextView
                     android:id="@+id/text14Service"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:text="Belly Shave"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp" />
 
                 <LinearLayout
                     android:id="@+id/outerContainer15"
@@ -562,7 +649,7 @@
                 android:layout_below="@id/outerContainer13"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -581,14 +668,14 @@
 
                 <TextView
                     android:id="@+id/tex14Service"
-                    android:layout_width="135dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:textAlignment="center"
                     android:text="Maltese Teddy Bear"
-                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="11sp" />
             </LinearLayout>
 
             <!-- Tenth Container -->
@@ -597,9 +684,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer13"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="16dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -618,14 +706,14 @@
 
                 <TextView
                     android:id="@+id/text17Service"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:text="Dragon Cut"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -635,7 +723,7 @@
                 android:layout_below="@id/outerContainer16"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -654,14 +742,14 @@
 
                 <TextView
                     android:id="@+id/tex19Service"
-                    android:layout_width="135dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:textAlignment="center"
                     android:text="Maltese Full Coat"
-                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <!-- Tenth Container -->
@@ -670,9 +758,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer16"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="16dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -691,14 +780,14 @@
 
                 <TextView
                     android:id="@+id/text20Service"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:text="Dinasaur Cut"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -708,7 +797,7 @@
                 android:layout_below="@id/outerContainer19"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -727,13 +816,14 @@
 
                 <TextView
                     android:id="@+id/tex22Service"
-                    android:layout_width="120dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="5dp"
                     android:textAlignment="center"
                     android:text="Labradoodle Teddy Bear"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
+                    android:textSize="11sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -743,9 +833,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer19"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="16dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -764,14 +855,14 @@
 
                 <TextView
                     android:id="@+id/text23Service"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="37dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
-                        android:text="Tiger Cut"
+                    android:text="Tiger Cut"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -781,7 +872,7 @@
                 android:layout_below="@id/outerContainer22"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -800,14 +891,14 @@
 
                 <TextView
                     android:id="@+id/tex25Service"
-                    android:layout_width="135dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginStart="8dp"
+                    android:textAlignment="center"
                     android:text="Toy Poodle Breed Trim"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <!-- Tenth Container -->
@@ -816,9 +907,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer23"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="16dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -837,14 +929,14 @@
 
                 <TextView
                     android:id="@+id/text27Service"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:text="Stripe Style"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -854,7 +946,7 @@
                 android:layout_below="@id/outerContainer24"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -873,14 +965,14 @@
 
                 <TextView
                     android:id="@+id/tex30Service"
-                    android:layout_width="135dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginStart="15dp"
+                    android:textAlignment="center"
                     android:text="Westie Kennel Cut"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp"/>
             </LinearLayout>
 
             <!-- Tenth Container -->
@@ -889,9 +981,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer24"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="16dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -910,14 +1003,14 @@
 
                 <TextView
                     android:id="@+id/tex90service"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="37dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:text="Clean Cut"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp"/>
             </LinearLayout>
 
 
@@ -928,7 +1021,7 @@
                 android:layout_below="@id/outerContainer30"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -947,14 +1040,14 @@
 
                 <TextView
                     android:id="@+id/tex36Service"
-                    android:layout_width="135dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginStart="10dp"
+                    android:textAlignment="center"
                     android:text="Westie Breed Trim"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <!-- Tenth Container -->
@@ -963,9 +1056,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer30"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="16dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -984,14 +1078,14 @@
 
                 <TextView
                     android:id="@+id/text40service"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="37dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:text="Bear Cut"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -1001,7 +1095,7 @@
                 android:layout_below="@id/outerContainer35"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="50dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -1020,14 +1114,14 @@
 
                 <TextView
                     android:id="@+id/tex40Service"
-                    android:layout_width="135dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginStart="12dp"
+                    android:textAlignment="center"
                     android:text="Bichon Breed Trim"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp"/>
             </LinearLayout>
 
             <!-- Tenth Container -->
@@ -1036,9 +1130,10 @@
                 android:layout_width="135dp"
                 android:layout_height="165dp"
                 android:layout_below="@id/outerContainer35"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="50dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="175dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -1057,137 +1152,68 @@
 
                 <TextView
                     android:id="@+id/text700service"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
+                    android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:text="Cute Style Cut"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/mama_mo_blue_darker"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp"/>
             </LinearLayout>
-
-
-
-
-
-
-
-
         </RelativeLayout>
     </ScrollView>
 
-
-    <ImageButton
-        android:id="@+id/btn_settings"
-        android:layout_width="34dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="310dp"
-        android:layout_marginTop="-6dp"
-        android:backgroundTint="@color/white"
-        android:contentDescription="settings"
-        android:scaleType="centerCrop"
-        android:src="@drawable/dots" />
-
-    <TextView
-        android:layout_width="299dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:background="@color/white"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/cut_styles"
-        android:textAlignment="center"
-        android:textColor="@color/mama_mo_blue_darker"
-        android:textSize="22sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textBathBlowDry90"
-        android:layout_width="299dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="30dp"
-        android:text="S: P 200 | M: P 225 | L: P 600"
-        android:background="@color/white"
-        android:textAlignment="center"
-        android:layout_marginLeft="16dp"
-        android:textColor="@color/mama_mo_blue_darker"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="299dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
-        android:layout_marginLeft="16dp"
-        android:background="@color/white"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Dog                                         Cat"
-        android:textAlignment="center"
-        android:textColor="@color/mama_mo_blue_darker"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
+    <!-- Bottom Navigation Buttons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom_buttons"
         android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-20dp"
-        android:layout_marginEnd="-20dp"
-        android:layout_marginBottom="-12dp"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:background="@color/white"
-        android:orientation="horizontal">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-
+        <!-- First ImageButton -->
         <ImageButton
             android:id="@+id/btn_home"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="12dp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/transparent"
             android:contentDescription="Home"
-            android:scaleType="fitStart"
-            android:src="@drawable/homeicon" />
+            android:src="@drawable/homeicon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_appointment"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
 
-        <ImageButton
-            android:id="@+id/btn_feedback"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="12dp"
-            android:backgroundTint="@color/transparent"
-            android:contentDescription="Services"
-            android:scaleType="fitStart"
-            android:src="@drawable/pawicon" />
-
+        <!-- Second ImageButton -->
         <ImageButton
             android:id="@+id/btn_appointment"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="12dp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/transparent"
-            android:contentDescription="Appointments"
-            android:scaleType="fitStart"
-            android:src="@drawable/plusicon" />
+            android:contentDescription="Appointment"
+            android:src="@drawable/plusicon"
+            app:layout_constraintStart_toEndOf="@id/btn_home"
+            app:layout_constraintEnd_toStartOf="@id/btn_feedback"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
 
+        <!-- Third ImageButton -->
         <ImageButton
-            android:id="@+id/btn_notifications"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="12dp"
+            android:id="@+id/btn_feedback"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/transparent"
-            android:contentDescription="Notifications"
-            android:scaleType="fitStart"
-            android:src="@drawable/notificationicon" />
-
-        <ImageButton
-            android:id="@+id/btn_profile"
-            android:layout_width="48dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="-4dp"
-            android:backgroundTint="@color/transparent"
-            android:contentDescription="Profile"
-            android:scaleType="fitStart"
-            android:src="@drawable/profileicon" />
-    </LinearLayout>
-</RelativeLayout>
+            android:contentDescription="Feedback"
+            android:src="@drawable/pawicon"
+            app:layout_constraintStart_toEndOf="@id/btn_appointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.33"
+            android:scaleType="fitCenter"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
