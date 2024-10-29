@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.PawSalon.R
 import com.example.PawSalon.view_models.RetrofitInstance
 import com.example.PawSalon.databinding.ActivitySignupBinding
+import com.example.PawSalon.network.ApiService
 import com.example.PawSalon.network.SignUpRequest
 import com.example.PawSalon.network.SignUpResponse
 import retrofit2.Call

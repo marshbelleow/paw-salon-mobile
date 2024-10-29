@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.PawSalon.R
+import com.example.PawSalon.network.ApiService
 import com.example.PawSalon.network.ForgotPasswordRequest
 import com.example.PawSalon.network.ForgotPasswordResponse
 import com.example.PawSalon.view_models.RetrofitInstance
@@ -70,21 +71,21 @@ class ForgotPasswordActivity : AppCompatActivity() {
         val apiService = RetrofitInstance.getClient().create(ApiService::class.java)
 
         // Call the API to send the forgot password request
-        apiService.forgotPassword(request).enqueue(object : Callback<ForgotPasswordResponse> {
-            override fun onResponse(call: Call<ForgotPasswordResponse>, response: Response<ForgotPasswordResponse>) {
-                if (response.isSuccessful) {
-                    Toast.makeText(this@ForgotPasswordActivity, "Reset link sent!", Toast.LENGTH_SHORT).show()
-                    // Navigate to another activity, e.g., back to login
-                    startActivity(Intent(this@ForgotPasswordActivity, LoginActivity::class.java))
-                    finish()
-                } else {
-                    Toast.makeText(this@ForgotPasswordActivity, "Error: ${response.message()}", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onFailure(call: Call<ForgotPasswordResponse>, t: Throwable) {
-                Toast.makeText(this@ForgotPasswordActivity, "Network error: ${t.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
+//        apiService.forgotPassword(request).enqueue(object : Callback<ForgotPasswordResponse> {
+//            override fun onResponse(call: Call<ForgotPasswordResponse>, response: Response<ForgotPasswordResponse>) {
+//                if (response.isSuccessful) {
+//                    Toast.makeText(this@ForgotPasswordActivity, "Reset link sent!", Toast.LENGTH_SHORT).show()
+//                    // Navigate to another activity, e.g., back to login
+//                    startActivity(Intent(this@ForgotPasswordActivity, LoginActivity::class.java))
+//                    finish()
+//                } else {
+//                    Toast.makeText(this@ForgotPasswordActivity, "Error: ${response.message()}", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<ForgotPasswordResponse>, t: Throwable) {
+//                Toast.makeText(this@ForgotPasswordActivity, "Network error: ${t.message}", Toast.LENGTH_SHORT).show()
+//            }
+//        })
     }
 }
