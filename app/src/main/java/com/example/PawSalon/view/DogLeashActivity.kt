@@ -13,10 +13,17 @@ class DogLeashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dogleash)
 
+        //BACK BUTTON
+        val btnBack: ImageButton = findViewById(R.id.btn_back)
+        btnBack.setOnClickListener {
+            val intent = Intent(this, PetSuppliesCatergorizedActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         // Appointment button navigation
         val appointmentImageButton: ImageButton = findViewById(R.id.btn_appointment)
         appointmentImageButton.setOnClickListener {
-            // Navigate directly to AppointmentActivity
             val intent = Intent(this, ServiceAppointmentActivity::class.java)
             startActivity(intent)
         }
@@ -24,7 +31,6 @@ class DogLeashActivity : AppCompatActivity() {
         // Settings button navigation
         val settingsImageButton: ImageButton = findViewById(R.id.btn_settings)
         settingsImageButton.setOnClickListener {
-            // Navigate directly to SettingsActivity
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }

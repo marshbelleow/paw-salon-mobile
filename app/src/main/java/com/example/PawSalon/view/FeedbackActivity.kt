@@ -1,6 +1,7 @@
 package com.example.PawSalon.view
 
 import android.content.Intent
+import android.content.SharedPreferences // Add this import
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -10,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope // Import lifecycleScope
 import com.example.PawSalon.R
-import com.example.PawSalon.model.Feedback
+import com.example.PawSalon.network.Feedback
 import com.example.PawSalon.view_models.RetrofitInstance
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -29,6 +30,7 @@ class FeedbackActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feedback)
 
+        //INITIALIZE PAW BUTTONS
         starButtons = listOf(
             findViewById(R.id.star1),
             findViewById(R.id.star2),
@@ -70,24 +72,37 @@ class FeedbackActivity : AppCompatActivity() {
             else -> {
                 val feedback = Feedback(currentRating, feedbackText)
 
-                // Use lifecycleScope to launch the coroutine
                 lifecycleScope.launch(Dispatchers.IO) {
                     try {
-                        val response = RetrofitInstance.api.submitFeedback(feedback)
-                        if (response.isSuccessful) {
+                        // Retrieve the Bearer token from SharedPreferences
+                        val sharedPreferences: SharedPreferences = getSharedPreferences("YourPrefsName", MODE_PRIVATE)
+                        val token = sharedPreferences.getString("TOKEN_KEY", null)
+
+                        // Pass the token in the header
+                        if (token != null) { // Check if the token is not null
+                            val response = RetrofitInstance.api.submitFeedback(token, feedback)
+
                             withContext(Dispatchers.Main) {
-                                showToast("Feedback Submitted: Rating $currentRating, Comment: $feedbackText")
-                                feedbackEditText.text.clear()
-                                updateRating(0)
+                                if (response.isSuccessful) {
+                                    showToast("Feedback Submitted: Rating $currentRating, Comment: $feedbackText")
+                                    feedbackEditText.text.clear()
+                                    updateRating(0)
+                                } else {
+                                    showToast("Submission failed: ${response.message()}")
+                                }
                             }
                         } else {
                             withContext(Dispatchers.Main) {
-                                showToast("Submission failed: ${response.message()}")
+                                showToast("Token not found. Please log in again.")
                             }
                         }
                     } catch (e: HttpException) {
                         withContext(Dispatchers.Main) {
                             showToast("Submission error: ${e.message()}")
+                        }
+                    } catch (e: Exception) { // Catch any other exceptions
+                        withContext(Dispatchers.Main) {
+                            showToast("Unexpected error: ${e.localizedMessage}")
                         }
                     }
                 }
@@ -95,31 +110,31 @@ class FeedbackActivity : AppCompatActivity() {
         }
     }
 
+
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun setupButtonListeners() {
+        //home nav
         findViewById<ImageButton>(R.id.btn_home)?.setOnClickListener {
             navigateTo(HomeScreenActivity::class.java)
         }
-
+        //appointment nav
         findViewById<ImageButton>(R.id.btn_appointment)?.setOnClickListener {
             navigateTo(ServiceAppointmentActivity::class.java)
         }
-
+        //settings nav
         findViewById<ImageButton>(R.id.btn_settings)?.setOnClickListener {
             navigateTo(SettingsActivity::class.java)
         }
-
+        //tint buttons
         findViewById<ImageButton>(R.id.btn_feedback)?.imageTintList =
             ContextCompat.getColorStateList(this, R.color.bottom_nav_active)
 
         listOf(
             R.id.btn_home,
-            R.id.btn_appointment,
-            R.id.btn_notifications,
-            R.id.btn_profile
+            R.id.btn_appointment
         ).forEach { id ->
             findViewById<ImageButton>(id)?.imageTintList =
                 ContextCompat.getColorStateList(this, R.color.bottom_nav_inactive)

@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    android:padding="16dp"
-    tools:context=".view.ServiceAppointmentActivity">
+    tools:context=".view.ServiceAppointmentActivity"
+    android:padding="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
@@ -437,7 +437,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etservices5"
+                android:id="@+id/etAdditionalDetails"
                 android:layout_width="match_parent"
                 android:maxLength="255"
                 android:layout_height="wrap_content"
@@ -473,43 +473,29 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="960dp"
-                android:layout_marginBottom="40dp">
-
-                <ImageButton
-                    android:id="@+id/btn_cancel"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@color/transparent"
-                    android:src="@drawable/x"
-                    android:scaleType="fitStart"
-                    android:contentDescription="Cancel Appointment"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_confirm"
-                    app:layout_constraintHorizontal_chainStyle="spread"
-                    app:layout_constraintStart_toStartOf="parent" />
+                android:layout_marginTop="990dp"
+                android:layout_marginBottom="100dp">
 
                 <ImageButton
                     android:id="@+id/btn_confirm"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:background="@color/transparent"
-                    android:src="@drawable/ok"
-                    android:scaleType="fitStart"
-                    android:contentDescription="Confirm Appointment"
                     android:clickable="true"
+                    android:contentDescription="Confirm Appointment"
                     android:focusable="true"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ok"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/btn_cancel" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>
     </ScrollView>
 
-    <!-- Bottom Navigation Buttons -->
+    <!-- Bottom Navigation Buttons fixed at the bottom -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom_buttons"
         android:layout_width="match_parent"
@@ -519,46 +505,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- First ImageButton -->
+        <!-- Home Button -->
         <ImageButton
             android:id="@+id/btn_home"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:backgroundTint="@color/transparent"
+            android:backgroundTint="@color/white"
             android:contentDescription="Home"
             android:src="@drawable/homeicon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn_appointment"
             app:layout_constraintWidth_percent="0.33"
-            android:scaleType="fitCenter"
-            tools:ignore="MissingConstraints" />
+            android:scaleType="fitCenter" />
 
-        <!-- Second ImageButton -->
+        <!-- Appointment Button -->
         <ImageButton
             android:id="@+id/btn_appointment"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:backgroundTint="@color/transparent"
+            android:backgroundTint="@color/white"
             android:contentDescription="Appointment"
             android:src="@drawable/plusicon"
             app:layout_constraintStart_toEndOf="@id/btn_home"
             app:layout_constraintEnd_toStartOf="@id/btn_feedback"
             app:layout_constraintWidth_percent="0.33"
-            android:scaleType="fitCenter"
-            tools:ignore="MissingConstraints" />
+            android:scaleType="fitCenter" />
 
-        <!-- Third ImageButton -->
+        <!-- Feedback Button -->
         <ImageButton
             android:id="@+id/btn_feedback"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:backgroundTint="@color/transparent"
+            android:backgroundTint="@color/white"
             android:contentDescription="Feedback"
             android:src="@drawable/pawicon"
             app:layout_constraintStart_toEndOf="@id/btn_appointment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintWidth_percent="0.33"
-            android:scaleType="fitCenter"
-            tools:ignore="MissingConstraints" />
+            android:scaleType="fitCenter" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,14 +12,22 @@ class GroomingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grooming)
 
-        val seemoreButton: Button = findViewById(R.id.btn_SEEMORE)
+        //BACK BUTTON
+        val btnBack: ImageButton = findViewById(R.id.btn_back)
+        btnBack.setOnClickListener {
+            val intent = Intent(this, HomeScreenActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
+        //CUT AND STYLES BUTTON
+        val seemoreButton: Button = findViewById(R.id.btn_SEEMORE)
         seemoreButton.setOnClickListener {
             val intent = Intent(this, CutStylesActivity::class.java)
             startActivity(intent)
         }
 
-        // Settings button navigation
+        // SETTINGS NAV
         val settingsImageButton: ImageButton = findViewById(R.id.btn_settings)
         settingsImageButton.setOnClickListener {
             // Navigate directly to SettingsActivity
@@ -27,7 +35,7 @@ class GroomingActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Appointment button navigation
+        // SERVICE APPOINTMENT NAV
         val appointmentImageButton: ImageButton = findViewById(R.id.btn_appointment)
         appointmentImageButton.setOnClickListener {
             // Navigate directly to AppointmentActivity
@@ -35,7 +43,7 @@ class GroomingActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Feedback button navigation
+        // FEEDBACK NAV
         val feedbackImageButton: ImageButton = findViewById(R.id.btn_feedback)
         feedbackImageButton.setOnClickListener {
             // Navigate directly to FeedbackActivity
@@ -43,7 +51,7 @@ class GroomingActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Home button navigation
+        // HOME NAV
         val homeButton: ImageButton = findViewById(R.id.btn_home)
         homeButton.setOnClickListener {
             val intent = Intent(this, HomeScreenActivity::class.java)

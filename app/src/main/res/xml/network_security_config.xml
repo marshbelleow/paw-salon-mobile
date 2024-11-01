@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-scurity-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includesSubdomain="true">192.168.118.139</domain>
+    </domain-config>
+</network-scurity-config>

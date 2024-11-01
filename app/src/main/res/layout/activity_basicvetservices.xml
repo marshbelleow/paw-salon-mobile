@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    >
+    android:padding="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
@@ -15,6 +15,17 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp"
         tools:ignore="MissingConstraints">
+
+        <!-- back Button -->
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="back button"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back_icon"/>
 
         <!-- Settings Button -->
         <ImageButton
@@ -50,8 +61,7 @@
         android:layout_height="780dp"
         android:fillViewport="true"
         android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -270,7 +280,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="670dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="60dp"
                 android:background="@drawable/photosbg">
 
                 <com.google.android.material.imageview.ShapeableImageView

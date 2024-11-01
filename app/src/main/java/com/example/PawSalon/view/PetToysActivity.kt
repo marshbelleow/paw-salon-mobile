@@ -13,10 +13,18 @@ class PetToysActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pettoys)
 
+        //BACK BUTTON
+        val btnBack: ImageButton = findViewById(R.id.btn_back) // Ensure this ID matches your layout
+        btnBack.setOnClickListener {
+            val intent = Intent(this, HomeScreenActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+            finish()
+        }
+
         // Appointment button navigation
         val appointmentImageButton: ImageButton = findViewById(R.id.btn_appointment)
         appointmentImageButton.setOnClickListener {
-            // Navigate directly to AppointmentActivity
             val intent = Intent(this, ServiceAppointmentActivity::class.java)
             startActivity(intent)
         }
@@ -24,7 +32,6 @@ class PetToysActivity : AppCompatActivity() {
         // Settings button navigation
         val settingsImageButton: ImageButton = findViewById(R.id.btn_settings)
         settingsImageButton.setOnClickListener {
-            // Navigate directly to SettingsActivity
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }

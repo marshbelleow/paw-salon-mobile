@@ -1,5 +1,6 @@
 package com.example.PawSalon.view
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
@@ -7,12 +8,20 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.PawSalon.R
 
 class BasicVetServicesActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basicvetservices)
 
+        //BACK BUTTON
+        val btnBack: ImageButton = findViewById(R.id.btn_back)
+        btnBack.setOnClickListener {
+            val intent = Intent(this, HomeScreenActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
-        // Feedback button navigation
+        // FEEDBACK NAV
         val feedbackImageButton: ImageButton = findViewById(R.id.btn_feedback)
         feedbackImageButton.setOnClickListener {
             // Navigate directly to FeedbackActivity
@@ -20,7 +29,7 @@ class BasicVetServicesActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Settings button navigation
+        // SETTINGS NAV
         val settingsImageButton: ImageButton = findViewById(R.id.btn_settings)
         settingsImageButton.setOnClickListener {
             // Navigate directly to SettingsActivity
@@ -28,7 +37,7 @@ class BasicVetServicesActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Appointment button navigation
+        // SERVICE APPOINTMENT NAV
         val appointmentImageButton: ImageButton = findViewById(R.id.btn_appointment)
         appointmentImageButton.setOnClickListener {
             // Navigate directly to AppointmentActivity
@@ -36,7 +45,7 @@ class BasicVetServicesActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Home button navigation
+        // HOME NAV
         val homeButton: ImageButton = findViewById(R.id.btn_home)
         homeButton.setOnClickListener {
             val intent = Intent(this, HomeScreenActivity::class.java)

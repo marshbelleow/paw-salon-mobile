@@ -4,7 +4,6 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -17,13 +16,7 @@ import com.google.android.material.datepicker.MaterialDatePicker
 import java.text.SimpleDateFormat
 import java.util.*
 import com.example.PawSalon.network.ApiService
-import com.example.PawSalon.network.ServiceAppointmentRequest
-import com.example.PawSalon.network.ServiceAppointmentResponse
 import com.example.PawSalon.view_models.RetrofitInstance
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-
 
 class ServiceAppointmentActivity : AppCompatActivity() {
     private lateinit var etFirstName: EditText
@@ -37,14 +30,15 @@ class ServiceAppointmentActivity : AppCompatActivity() {
     private lateinit var etPetName: EditText
     private lateinit var etDate: EditText
     private lateinit var etTime: EditText
-    private lateinit var cancelBtn: ImageButton
+    private lateinit var timeDropdownBtn: ImageView
+    private lateinit var dateDropdownBtn: ImageView
+    private lateinit var serviceDropdownBtn: ImageView
     private lateinit var confirmBtn: ImageButton
-    private lateinit var etServiceCategory: EditText   // For service type/category
+    private lateinit var etServiceCategory: EditText
     private lateinit var etChosenService: EditText
     private val calendar = Calendar.getInstance()
     private var selectedTime: String? = null
     private lateinit var apiService: ApiService
-
     private val serviceOptions = mapOf(
         "Grooming Services" to arrayOf(
             "Bath & Blow Dry", "Nail Clipping", "Ear Cleaning",
@@ -64,7 +58,7 @@ class ServiceAppointmentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_service_appointment)
 
-        // Initialize UI elements
+        // INITIALIZE UI
         etFirstName = findViewById(R.id.etFirstName)
         etLastName = findViewById(R.id.etLastName)
         etPhoneNumber = findViewById(R.id.etphone)
@@ -78,13 +72,18 @@ class ServiceAppointmentActivity : AppCompatActivity() {
         etServiceCategory = findViewById(R.id.etservice)
         etChosenService = findViewById(R.id.etSelectedService)
         etTime = findViewById(R.id.ettime)
-        cancelBtn = findViewById(R.id.btn_cancel)
+        timeDropdownBtn = findViewById(R.id.timeDropdown)
+        dateDropdownBtn = findViewById(R.id.dateDropdown)
+        serviceDropdownBtn = findViewById(R.id.serviceDropdown)
         confirmBtn = findViewById(R.id.btn_confirm)
 
-        // Initialize API service
+        // API SERVICE
         apiService = RetrofitInstance.api
 
-        // Date and time selection
+        // DATE, TIME, AND SERVICE
+        dateDropdownBtn.setOnClickListener { showDateSelectionDialog() }
+        timeDropdownBtn.setOnClickListener { showTimePicker() }
+        serviceDropdownBtn.setOnClickListener { showServiceSelectionDialog() }
         etDate.setOnClickListener { showDateSelectionDialog() }
         etTime.setOnClickListener { showTimePicker() }
         etServiceCategory.setOnClickListener { showServiceSelectionDialog() }
@@ -101,7 +100,7 @@ class ServiceAppointmentActivity : AppCompatActivity() {
         }
     }
 
-    // Setup bottom navigation button listeners
+    // SETUP BOTTOM NAV BUTTON LISTENERS
     private fun setupButtonListeners() {
         // Home button listener
         findViewById<ImageButton>(R.id.btn_home)?.let { homeButton ->
@@ -113,7 +112,7 @@ class ServiceAppointmentActivity : AppCompatActivity() {
             }
         }
 
-        // Settings button listener
+        // FEEDBACK BUTTON
         findViewById<ImageButton>(R.id.btn_feedback)?.let { feedbackButton ->
             feedbackButton.setOnClickListener {
                 startActivity(Intent(this, FeedbackActivity::class.java))
@@ -121,15 +120,13 @@ class ServiceAppointmentActivity : AppCompatActivity() {
             }
         }
 
-        // Adjust bottom navigation button tints
+        // BUTTON TINT
         findViewById<ImageButton>(R.id.btn_appointment)?.imageTintList =
             ContextCompat.getColorStateList(this, R.color.bottom_nav_active)
 
         listOf(
             R.id.btn_home,
-            R.id.btn_feedback,
-            R.id.btn_notifications,
-            R.id.btn_profile
+            R.id.btn_feedback
         ).forEach { id ->
             findViewById<ImageButton>(id)?.imageTintList =
                 ContextCompat.getColorStateList(this, R.color.bottom_nav_inactive)
@@ -253,102 +250,77 @@ class ServiceAppointmentActivity : AppCompatActivity() {
             { _, hourOfDay, minute ->
                 val amPm = if (hourOfDay >= 12) "PM" else "AM"
                 val hourFormatted = if (hourOfDay > 12) hourOfDay - 12 else hourOfDay
-                selectedTime = String.format(Locale.getDefault(), "%02d:%02d %s", hourFormatted, minute, amPm)
+                selectedTime = String.format("%02d:%02d %s", hourFormatted, minute, amPm)
                 etTime.setText(selectedTime)
-            }, currentHour, currentMinute, false
+            },
+            currentHour,
+            currentMinute,
+            false
         )
 
         timePickerDialog.show()
     }
 
     private fun showServiceSelectionDialog() {
-        val serviceCategories = serviceOptions.keys.toTypedArray()
-
-        AlertDialog.Builder(this)
-            .setTitle("Select Service Category")
-            .setItems(serviceCategories) { _, index ->
-                selectedServiceCategory = serviceCategories[index]
-                showSpecificServiceDialog(selectedServiceCategory)
-            }
-            .show()
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Select Service Category")
+        val categories = serviceOptions.keys.toTypedArray()
+        builder.setItems(categories) { _, which ->
+            selectedServiceCategory = categories[which]
+            etServiceCategory.setText(selectedServiceCategory)
+            showSpecificServiceSelectionDialog(selectedServiceCategory)
+        }
+        builder.show()
     }
 
-    private fun showSpecificServiceDialog(serviceCategory: String) {
-        val specificServices = serviceOptions[serviceCategory]
-        specificServices?.let { services ->
-            AlertDialog.Builder(this)
-                .setTitle("Select Specific Service")
-                .setItems(services) { _, index ->
-                    etChosenService.setText(services[index])
-                    etServiceCategory.setText(serviceCategory)
-                }
-                .show()
+    private fun showSpecificServiceSelectionDialog(category: String) {
+        val services = serviceOptions[category] ?: return
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Select Specific Service")
+        builder.setItems(services) { _, which ->
+            etChosenService.setText(services[which])
         }
+        builder.show()
     }
 
     private fun submitAppointment() {
-        val firstName = etFirstName.text.toString().trim()
-        val lastName = etLastName.text.toString().trim()
-        val phoneNumber = etPhoneNumber.text.toString().trim()
-        val address = etAddress.text.toString().trim()
-        val email = etEmail.text.toString().trim()
-        val petName = etPetName.text.toString().trim()
-        val date = etDate.text.toString().trim()
-        val time = etTime.text.toString().trim()
-        val animalType = if (radioDog.isChecked) "Dog" else "Cat"
-        val serviceCategory = etServiceCategory.text.toString().trim()
-        val chosenService = etChosenService.text.toString().trim()
+        val firstName = etFirstName.text.toString()
+        val lastName = etLastName.text.toString()
+        val phoneNumber = etPhoneNumber.text.toString()
+        val address = etAddress.text.toString()
+        val email = etEmail.text.toString()
+        val petName = etPetName.text.toString()
+        val animalType = if (animalSelectionGroup.checkedRadioButtonId == radioDog.id) "Dog" else "Cat"
+        val date = etDate.text.toString()
+        val time = etTime.text.toString()
+        val serviceType = etServiceCategory.text.toString()
+        val specificService = etChosenService.text.toString()
 
-        val appointmentRequest = ServiceAppointmentRequest(
-            firstName, lastName, phoneNumber, address, email, petName, animalType, date, time, serviceCategory, chosenService
-        )
-
-        apiService.createServiceAppointment(appointmentRequest).enqueue(object : Callback<ServiceAppointmentResponse> {
-            override fun onResponse(
-                call: Call<ServiceAppointmentResponse>,
-                response: Response<ServiceAppointmentResponse>
-            ) {
-                if (response.isSuccessful) {
-                    Toast.makeText(this@ServiceAppointmentActivity, "Appointment submitted successfully!", Toast.LENGTH_SHORT).show()
-                    // Navigate to another activity or clear fields if necessary
-                } else {
-                    handleErrorResponse(response)
-                }
-            }
-
-            override fun onFailure(call: Call<ServiceAppointmentResponse>, t: Throwable) {
-                Log.e("ServiceAppointmentActivity", "Error: ${t.message}", t)
-                Toast.makeText(this@ServiceAppointmentActivity, "Network error: ${t.message}", Toast.LENGTH_LONG).show()
-            }
-        })
-    }
-
-    private fun handleErrorResponse(response: Response<ServiceAppointmentResponse>) {
-        val errorBody = response.errorBody()?.string()
-        val errorMessage: String = when (response.code()) {
-            400 -> "Bad request. Please check your input."
-            401 -> "Unauthorized. Please log in."
-            404 -> "Service not found."
-            500 -> "Server error. Please try again later."
-            else -> "An unknown error occurred."
+        val intent = Intent(this, ServiceConfirmationActivity::class.java).apply {
+            putExtra("FIRST_NAME", firstName)
+            putExtra("LAST_NAME", lastName)
+            putExtra("PHONE", phoneNumber)
+            putExtra("ADDRESS", address)
+            putExtra("EMAIL", email)
+            putExtra("PET_TYPE", animalType)
+            putExtra("PET_NAME", petName)
+            putExtra("DATE", date)
+            putExtra("TIME", time)
+            putExtra("SERVICE_TYPE", serviceType)
+            putExtra("SPECIFIC_SERVICE", specificService)
         }
-
-        Log.e("ServiceAppointmentActivity", "Error Response: $errorBody")
-        Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
+        startActivity(intent)
     }
 
     private fun isValidPhoneNumber(phoneNumber: String): Boolean {
-        // Validate phone number format
-        return phoneNumber.matches(Regex("^\\+?[0-9]{10,13}\$"))
-    }
-
-    private fun isValidEmail(email: String): Boolean {
-        // Validate email format
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+        return Regex("^\\d{11}\$").matches(phoneNumber)
     }
 
     private fun isValidAddress(address: String): Boolean {
-        // Validate address (basic check for now)
-        return address.isNotEmpty() && address.length > 5
+        return address.length >= 5
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 }

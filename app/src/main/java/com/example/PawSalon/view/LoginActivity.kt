@@ -1,16 +1,17 @@
 package com.example.PawSalon.view
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.example.PawSalon.network.ApiService
-import com.example.PawSalon.R
+import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.PawSalon.R
 import com.example.PawSalon.databinding.ActivityLoginBinding
+import com.example.PawSalon.network.ApiService
 import com.example.PawSalon.network.LoginRequest
 import com.example.PawSalon.network.LoginResponse
 import com.example.PawSalon.view_models.RetrofitInstance
@@ -46,12 +47,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, View.OnFocusCha
         startActivity(intent)
     }
 
-    private fun navigateToForgotPassword() {
-        val intent = Intent(this, ForgotPasswordActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-        startActivity(intent)
-    }
-
     private fun handleLogin() {
         if (validateUsername() && validatePassword()) {
             val username = mBinding.loginUsernameEt.text.toString()
@@ -66,24 +61,41 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, View.OnFocusCha
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     if (response.isSuccessful) {
                         val loginResponse = response.body()
-                        Toast.makeText(this@LoginActivity, "Login Successful: ${loginResponse?.message}", Toast.LENGTH_SHORT).show()
-                        // Handle success, navigate or store token
+                        val token = loginResponse?.token
+
+                        if (!token.isNullOrEmpty()) {
+                            saveToken(token)
+                            Toast.makeText(this@LoginActivity, "Login Successful!", Toast.LENGTH_SHORT).show()
+
+                            // Navigate to home or main activity
+                            navigateToHome()
+                        }
                     } else {
-                        // Log the raw response for debugging
-                        Toast.makeText(this@LoginActivity, "Login Failed: ${response.message()}", Toast.LENGTH_SHORT).show()
-                        Log.e("LoginError", "Response: ${response.errorBody()?.string()}") // Add this to log errors
+                        val errorBody = response.errorBody()?.string()
+                        Toast.makeText(this@LoginActivity, "Login Failed: ${errorBody}", Toast.LENGTH_SHORT).show()
+                        Log.e("LoginError", "Response: ${errorBody}")
                     }
                 }
 
-
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                    // Log the error message
                     Log.e("LoginError", "onFailure: ${t.message}", t)
                     Toast.makeText(this@LoginActivity, "Login failed: ${t.message}", Toast.LENGTH_SHORT).show()
                 }
-
             })
         }
+    }
+
+    private fun saveToken(token: String) {
+        // Save token in SharedPreferences for future access
+        val sharedPreferences = getSharedPreferences("PawSalonPrefs", Context.MODE_PRIVATE)
+        sharedPreferences.edit().putString("auth_token", token).apply()
+    }
+
+    private fun navigateToHome() {
+        val intent = Intent(this, HomeScreenActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+        finish()
     }
 
     private fun validateUsername(): Boolean {

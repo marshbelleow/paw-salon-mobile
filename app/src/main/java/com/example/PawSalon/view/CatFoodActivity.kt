@@ -13,7 +13,16 @@ class CatFoodActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catfood)
 
-        // Appointment button navigation
+        //BACK BUTTON
+        val btnBack: ImageButton = findViewById(R.id.btn_back) // Ensure this ID matches your layout
+        btnBack.setOnClickListener {
+            val intent = Intent(this, HomeScreenActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+            finish()
+        }
+
+        //SERVICE APPOINTMENT NAV
         val appointmentImageButton: ImageButton = findViewById(R.id.btn_appointment)
         appointmentImageButton.setOnClickListener {
             // Navigate directly to AppointmentActivity
@@ -21,7 +30,7 @@ class CatFoodActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Settings button navigation
+        // SETTINGS NAV
         val settingsImageButton: ImageButton = findViewById(R.id.btn_settings)
         settingsImageButton.setOnClickListener {
             // Navigate directly to SettingsActivity
@@ -29,7 +38,7 @@ class CatFoodActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Home button navigation
+        // HOME NAV
         val homeButton: ImageButton = findViewById(R.id.btn_home)
         homeButton.setOnClickListener {
             val intent = Intent(this, HomeScreenActivity::class.java)
@@ -38,3 +47,4 @@ class CatFoodActivity : AppCompatActivity() {
         }
     }
 }
+

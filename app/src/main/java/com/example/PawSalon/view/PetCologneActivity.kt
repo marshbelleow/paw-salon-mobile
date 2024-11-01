@@ -13,6 +13,14 @@ class PetCologneActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_petcologne)
 
+        //back button
+        val btnBack: ImageButton = findViewById(R.id.btn_back) // Ensure this ID matches your layout
+        btnBack.setOnClickListener {
+            val intent = Intent(this, PetSuppliesCatergorizedActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         // Appointment button navigation
         val appointmentImageButton: ImageButton = findViewById(R.id.btn_appointment)
         appointmentImageButton.setOnClickListener {

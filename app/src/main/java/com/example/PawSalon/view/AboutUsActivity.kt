@@ -8,15 +8,16 @@ import android.content.Intent
 import android.net.Uri
 import android.view.View
 import android.widget.Toast
+import android.widget.ImageButton
 
 class AboutUsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_about_pawsalon) // Ensure this matches your actual layout file
+        setContentView(R.layout.activity_about_pawsalon)
     }
 
-    // Function to open Google Maps
+    // GOOGLE MAPS
     fun openLocation(view: android.view.View) {
         val gmmIntentUri = Uri.parse("geo:0,0?q=234+Bonuan+Gueset,+Dagupan+City,+Pangasinan")
         val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
@@ -24,7 +25,7 @@ class AboutUsActivity : AppCompatActivity() {
         startActivity(mapIntent)
     }
 
-    // Function to open Phone
+    // PHONE DIAL
     fun openPhone(view: android.view.View) {
         val phoneNumber = "09238195589" // Make sure to remove any formatting
         val phoneIntent = Intent(Intent.ACTION_DIAL).apply {
@@ -37,7 +38,7 @@ class AboutUsActivity : AppCompatActivity() {
         }
     }
 
-        // Function to open the email app with the predefined address and subject
+        // EMAIL LINK
     fun openEmail(view: View) {
         val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
             data = Uri.parse("mailto:") // Only email apps should handle this
@@ -51,7 +52,7 @@ class AboutUsActivity : AppCompatActivity() {
         }
     }
 
-    // Function to open the Facebook page in the browser
+    // FACEBOOK PAGE
     fun openFacebook(view: View) {
         val facebookUrl = "https://www.facebook.com/PawSalonDagupan"
         val facebookIntent = Intent(Intent.ACTION_VIEW, Uri.parse(facebookUrl))

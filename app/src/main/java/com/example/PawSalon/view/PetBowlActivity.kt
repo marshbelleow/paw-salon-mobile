@@ -13,6 +13,16 @@ class PetBowlActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_petbowl)
 
+
+        //back button
+        val btnBack: ImageButton = findViewById(R.id.btn_back) // Ensure this ID matches your layout
+        btnBack.setOnClickListener {
+            val intent = Intent(this, HomeScreenActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+            finish()
+        }
+
         // Appointment button navigation
         val appointmentImageButton: ImageButton = findViewById(R.id.btn_appointment)
         appointmentImageButton.setOnClickListener {

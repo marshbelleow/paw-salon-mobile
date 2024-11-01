@@ -1,5 +1,7 @@
 package com.example.PawSalon.view_models
 
+import android.content.Context
+import android.net.ConnectivityManager
 import com.example.PawSalon.network.ApiService
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
@@ -32,7 +34,7 @@ object RetrofitInstance {
 
             // Build the Retrofit instance
             retrofit = Retrofit.Builder()
-                .baseUrl("http://192.168.43.116:80/api/") // Ensure this is correct
+                .baseUrl("http://192.168.0.102:80/api/") // Ensure this is correct
                 .addConverterFactory(GsonConverterFactory.create(gson)) // Pass the lenient Gson instance here
                 .client(okHttpClient)  // Attach the custom OkHttpClient
                 .build()
@@ -43,5 +45,12 @@ object RetrofitInstance {
     // Expose the API service
     val api: ApiService by lazy {
         getClient().create(ApiService::class.java)
+    }
+
+    // Network availability check
+    fun isNetworkAvailable(context: Context): Boolean {
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = connectivityManager.activeNetworkInfo
+        return networkInfo != null && networkInfo.isConnected
     }
 }

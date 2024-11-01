@@ -16,6 +16,18 @@
         tools:layout_editor_absoluteY="16dp"
         tools:ignore="MissingConstraints">
 
+        <!-- back Button -->
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="back button"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back_icon"/>
+
+
         <!-- Settings Button -->
         <ImageButton
             android:id="@+id/btn_settings"
@@ -295,7 +307,7 @@
         </RelativeLayout>
     </ScrollView>
 
-    <!-- Bottom Navigation Buttons -->
+    <!-- Bottom Navigation Buttons fixed at the bottom -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom_buttons"
         android:layout_width="match_parent"
@@ -305,7 +317,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- First ImageButton -->
+        <!-- Home Button -->
         <ImageButton
             android:id="@+id/btn_home"
             android:layout_width="0dp"
@@ -316,10 +328,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn_appointment"
             app:layout_constraintWidth_percent="0.33"
-            android:scaleType="fitCenter"
-            tools:ignore="MissingConstraints" />
+            android:scaleType="fitCenter" />
 
-        <!-- Second ImageButton -->
+        <!-- Appointment Button -->
         <ImageButton
             android:id="@+id/btn_appointment"
             android:layout_width="0dp"
@@ -330,10 +341,9 @@
             app:layout_constraintStart_toEndOf="@id/btn_home"
             app:layout_constraintEnd_toStartOf="@id/btn_feedback"
             app:layout_constraintWidth_percent="0.33"
-            android:scaleType="fitCenter"
-            tools:ignore="MissingConstraints" />
+            android:scaleType="fitCenter" />
 
-        <!-- Third ImageButton -->
+        <!-- Feedback Button -->
         <ImageButton
             android:id="@+id/btn_feedback"
             android:layout_width="0dp"
@@ -344,7 +354,6 @@
             app:layout_constraintStart_toEndOf="@id/btn_appointment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintWidth_percent="0.33"
-            android:scaleType="fitCenter"
-            tools:ignore="MissingConstraints" />
+            android:scaleType="fitCenter" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

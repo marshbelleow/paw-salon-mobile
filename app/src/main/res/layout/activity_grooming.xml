@@ -16,6 +16,17 @@
         tools:layout_editor_absoluteY="16dp"
         tools:ignore="MissingConstraints">
 
+        <!-- back Button -->
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="back button"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back_icon"/>
+
         <!-- Settings Button -->
         <ImageButton
             android:id="@+id/btn_settings"
@@ -487,7 +498,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="100dp"
                 android:background="@drawable/photosbg"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -524,6 +535,18 @@
                     android:text="S:350 | M:450 | L:550"
                     android:textColor="@color/mama_mo_blue_darker"
                     android:textSize="10sp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView19"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="80dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/basicgrooming"
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    app:strokeColor="@color/mama_mo_blue_darker"
+                    app:strokeWidth=".70dp" />
             </LinearLayout>
 
             <!-- Tenth Container -->
@@ -573,18 +596,6 @@
                     android:text="S:500 | M:600 | L:700"
                     android:textColor="@color/mama_mo_blue_darker"
                     android:textSize="10sp" />
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imageView19"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginTop="80dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/basicgrooming"
-                    app:shapeAppearanceOverlay="@style/roundimageview"
-                    app:strokeColor="@color/mama_mo_blue_darker"
-                    app:strokeWidth=".70dp" />
 
                 <LinearLayout
                     android:id="@+id/outerContainer21"

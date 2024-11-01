@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/white">
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,18 +23,55 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="80dp"
-            android:layout_marginTop="490dp"
+            android:layout_marginTop="500dp"
             android:layout_marginEnd="80dp"
             android:scaleType="centerCrop"
             android:src="@drawable/noteboard">
 
         </com.google.android.material.imageview.ShapeableImageView>
 
+
+        <!-- Pet Boarding Button -->
+
+        <Button
+            android:id="@+id/btn_pet_boarding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/circle_background"
+            android:padding="6dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textAllCaps="false"
+            android:text="Book Here"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView5" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white">
+
+            <!-- back Button -->
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="back button"
+                android:scaleType="centerCrop"
+                android:src="@drawable/back_icon"/>
+
             <!-- Settings Button -->
             <ImageButton
                 android:id="@+id/btn_settings"
@@ -367,24 +404,4 @@
             android:scaleType="fitCenter"
             tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <Button
-        android:id="@+id/btn_pet_boarding"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/signup_rounded_button"
-        android:backgroundTint="@color/my_primary"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Book Now!"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_buttons"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/relativeLayout2"
-        app:layout_constraintVertical_bias="0.856" />
 </androidx.constraintlayout.widget.ConstraintLayout>

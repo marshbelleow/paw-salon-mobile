@@ -15,6 +15,18 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp"
         tools:ignore="MissingConstraints">
+
+        <!-- back Button -->
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="back button"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back_icon"/>
+
         <!-- Settings Button -->
         <ImageButton
             android:id="@+id/btn_settings"

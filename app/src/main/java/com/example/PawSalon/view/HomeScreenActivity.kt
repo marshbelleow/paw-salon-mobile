@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat
 import com.example.PawSalon.R
 
 class HomeScreenActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homescreen)
@@ -54,6 +55,11 @@ class HomeScreenActivity : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         }
+    }
+
+    // Override to prevent navigating back to login/signup screen
+    override fun onBackPressed() {
+        moveTaskToBack(true)
     }
 
     // Helper function to reduce redundancy for navigation
